@@ -1,7 +1,5 @@
-# smart-data-agreements
-
 <h1 align="center">
-    Automated Data Agreements - Making data transactions trustworthy, auditable and immutable
+    Smart Data Agreements - Making data transactions trustworthy, auditable and immutable
 </h1>
 
 <p align="center">
