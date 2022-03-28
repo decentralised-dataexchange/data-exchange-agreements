@@ -1,5 +1,5 @@
 <h1 align="center">
-    Smart Data Agreements - Making data transactions trustworthy, auditable and immutable
+    Data Exchange Agreements - Making data transactions trustworthy, auditable and immutable
 </h1>
 
 <p align="center">
