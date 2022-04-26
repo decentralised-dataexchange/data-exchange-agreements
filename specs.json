@@ -1,0 +1,12 @@
+{
+    "specs": [
+        {
+            "title": "DDX spec-up Example",
+            "spec_directory": "./docs",
+            "output_path": "./",
+            "markdown_paths": [
+                "datadisclosure-agreement-specification.md"
+            ]
+        }
+    ]
+}
