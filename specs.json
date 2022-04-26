@@ -1,9 +1,11 @@
 {
     "specs": [
         {
-            "title": "DDX spec-up Example",
+            "title": "Data Exchange Specifications",
             "spec_directory": "./docs",
             "output_path": "./",
+            "logo": "iGrant_1900_800_Black.png",
+            "logo_link": "https://dxa.igrant.io/",
             "markdown_paths": [
                 "datadisclosure-agreement-specification.md"
             ]
