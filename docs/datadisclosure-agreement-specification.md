@@ -7,18 +7,18 @@ Work in progress (v0.9) with implementation started. This spec is live and is be
 
 **Latest Draft:** 
 
-Editors:
+**Editors:**
 
 ~ Mr. George Padayatti (iGrant.io, Sweden)  
 ~ Mr. Jan Linquist (Linaltec, Sweden)  
 ~ Mr. Lal Chandran (iGrant.io, Sweden)
 
-Contributors and Reviwers:
+**Contributors and Reviwers:**
 
 ~ Dr. David Goodman (iGrant.io, Sweden)  
 ~ Ms. Lotta Lundin (iGrant.io, Sweden) 
 
-Participate:
+**Participate:**
 
 ~ [GitHub repo](https://github.com/decentralised-dataexchange/data-exchange-agreements)
 ~ [File a bug](https://github.com/decentralised-dataexchange/data-exchange-agreements/issues)
