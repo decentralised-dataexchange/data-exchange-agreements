@@ -25,11 +25,10 @@ The PS-SDA project is an open source conrtibution lead by iGrant.io (Sweden), My
 
 The key deliverables of the project are as given. The table summarises the release status of all the deliverables.
 
-| Identifier | Date             | Deliverable                                    |
-| :--------- | :--------------- | :--------------------------------------------- |
-| D1 / D2    | 04-February 2022 | Function specification v1.0.0                  |
-|            | 04-February 2022 | Data Disclosure Agreement specification v1.0.0 |
-
+| Identifier | Date             | Deliverable                                                                                                                                                                                 |
+| :--------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| D1 / D2    | 04-February 2022 | Function specification v1.0.0                                                                                                                                                               |
+|            | 28-April 2022    | Data Disclosure Agreement specification ([Latest version](https://github.com/decentralised-dataexchange/data-exchange-agreements/blob/main/docs/datadisclosure-agreement-specification.md)) |
 
 ## Contributing
 
