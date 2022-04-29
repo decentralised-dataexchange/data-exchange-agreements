@@ -50,7 +50,7 @@ Data exchange agreements aim to enhance data governance to ​increase transpare
 
 iGrant.io is a data exchange platform that helps organisations access personal data in a sustainable and human-centric manner. Using iGrant.io’s data exchange services, organisations gain access to verifiable, auditable and data regulatory compliant personal data. Every data exchange has an associated DA that records conditions for an organisation to process personal data in accordance with data regulations, such as the GDPR and the Data Governance Act, as illustrated in Figure 1 below.
 
-![](docs/images/iGrant.io_MyDataOperator.svg)
+![](images/iGrant.io_MyDataOperator.svg)
 *Figure 1. A data exchange ecosystem using a data intermediary*
 
 ### Data exchange agreement landscape
@@ -62,7 +62,7 @@ In a data exchange ecosystem, there are a number of agreements that are required
 3. an organisation and its supplier and 
 4. two individuals 
 
-![](docs/images/data-exchange-landscape.svg)
+![](images/data-exchange-landscape.svg)
 *Figure 2. Data exchange agreement landscape*
 
 #### Data Agreement (DA) or Personal Data Agreement
@@ -102,7 +102,7 @@ The delegation agreement is included to complete the data exchange ecosystem. A 
 
 W3C defines provenance as *the information about entities, activities, and agents  involved in producing a piece of data or thing, which can be used to form assessments about its quality, reliability or trustworthiness*. 
 
-![](docs/images/data-provenance-terminology.png)
+![](images/data-provenance-terminology.png)
 *Figure 3. Data provenance terminology*
 
 There are different models that can be used to achieve data provenance. This includes the Open Provenance Model (OPM) and W3C PROV. Both these models have basic entity, activity and agent (people) components. The difference comes with W3C PROV providing additional terms to help with explaining the details of activity through the usage of “plans”. These plans set the details of the execution of an activity. 
@@ -124,14 +124,14 @@ Data act and AI regulations
 
 Figure 4 below illustrates a typical scenario where an organisation, Org. A, uses a DA to share data externally to Org B and Org C. Individual instances of the DA are signed by individuals X and Y. A DDA is used to govern the data exchange between Org A and Orgs B and C.
 
-![](docs/images/data-exchange-provenance-scenarios.svg)
+![](images/data-exchange-provenance-scenarios.svg)
 *Figure 4. Data exchange and provenance scenarios*
 
 ###	DEXA High-level workflow
 
 As described in the background section, iGrant.io provides a decentralised data exchange service based on self-sovereign identity (SSI), OpenID Connect and OAuth protocols. The service enables organisations to exchange data in a transparent, secure and privacy-centric manner using verifiable data exchange agreements. The received data can be verified using SSI and X.509-based signatures. A DEXA workflow involves the following stages as illustrated in Figure 5:
 
-![](docs/images/data-agreement-workflow.png)
+![](images/data-agreement-workflow.png)
 *Figure 5. DA and DDA workflow*
 
 These different phases are explained below: 
@@ -148,7 +148,7 @@ These different phases are explained below:
 
 The four phases described above are further elaborated in Figure 6 and explains how the DAs and DDAs are interlinked in the DEXA workflow. To ensure their compliance with data regulations, each organisation is encouraged to perform a privacy risk assessment or DPIA and ensure that risk mitigation measures are in place before collecting and processing personal data. 
 
-![](docs/images/da-dda-interlink-with-dxa-workflow.svg)
+![](images/da-dda-interlink-with-dxa-workflow.svg)
 *Figure 6: DA and DDA interlink within DEXA workflow*
 
 When a DDA is signed and personal data has been exchanged, the DS is not liable for the DUS's use of personal data. However, the obligation to monitor the individual’s consent to share data with a third party, in this case, the DUS, remains with the DS. The DUS is obliged to adhere to the terms laid out in the DDA. If the DUS does not adhere to the DDA, the DS can, upon finding out about the infringement, withdraw the DDA and consequently revoke all the DAs associated with the DDA.
@@ -290,7 +290,7 @@ Capture
 
 #### Publish and Sign DDA sequence diagram
 
-![](docs/images/dda-publish-and-sign-workflow.svg)
+![](images/dda-publish-and-sign-workflow.svg)
 *Figure 7: DDA - Publish and sign sequence*
 
 #### Data Provenance 
@@ -301,12 +301,12 @@ Appendix D in this specification provides a detailed ontology analysis of what n
 
 Figure 8 elaborates on how the provenance is captured during a data exchange transaction in Scenario 01 where there is no need for identity proof (E.g. Anonymised data exchange). 
 
-![](docs/images/dda-establish-data-provenance-no-ID-proof.svg)
+![](images/dda-establish-data-provenance-no-ID-proof.svg)
 *Figure 8: Scenario 01: DA, DDA workflows without ID proof (E.g. anonymised data exchange)*
 
 **Scenario 02:** DS and DUS require individual identity proof before the data exchange. This is the case, for e.g., during a registration process, check-ins, covid-credential exchange etc. This is illustrated in Figure 9.
 
-![](docs/images/dda-establish-data-provenance-with-ID-proof.svg)
+![](images/dda-establish-data-provenance-with-ID-proof.svg)
 *Figure 9. Scenario 02: DA, DDA workflows with ID proof*
 ### On-chain and off-chain agreements for provenance trail
 
@@ -323,7 +323,7 @@ During a DDA capture process, the signing transaction is registered on the chain
 
 During the creation of the data disclosure agreement, the DS creates a token of ownership for the DDA template and registers it to the blockchain. The DDA template is stored in the (Inter Planetary File System) IPFS. The signing process is facilitated  by a data intermediary service, such as iGrant.io, which acts as a notary and registers the signed DDA evidence (hash) to the blockchain.
 
-![](docs/images/dda-publish-ds-in-blockchain-ecosystem.svg)
+![](images/dda-publish-ds-in-blockchain-ecosystem.svg)
 *Figure 10. Publishing of DDAs by DS in the blockchain ecosystem*
 
 The DS and the DUS do not need to understand the underlying witness system and cost mechanisms of using a DLT, e.g. Ethereum, bitcoin etc. The use of data intermediary service also reduces the costs associated with the footprint on the blockchain and solves the key issue of trust, e.g. who's signed DDA do you trust? 
@@ -333,14 +333,14 @@ The transaction data is on-chain as per chapter "Ontologies/ On-Chain Data", wit
 #### Countersigning of DDAs by the DUS via a DLT
 Any DUS can view the DS and what data they are offering to share, countersign a DDA and use the data based on the terms set in the agreement as shown below.
 
-![](docs/images/dda-countersigning-by-dus-in-blockchain-ecosystem.svg)
+![](images/dda-countersigning-by-dus-in-blockchain-ecosystem.svg)
 *Figure 11. Countersigning of DDA by DUS in the blockchain ecosystem*
 
 #### Off-chain and On-chain handling of data disclosure agreements
 
 As illustrated in Figure 11 above, once the DDA is prepared, the signed DDA (by the DS) is broadcasted to the data intermediary. The data intermediary waits for the countersigned DDA from the DUS(s) and anchors it to the DLT. The detailed mechanism involved in anchoring (via a smart contract) to the underlying witness system (e.g. DLTs like blockchain, hash graphs) taking into account the key considerations (in chapter 3.2] is as pictured below Figure 12.
 
-![](docs/images/dda-anchor--transactions-to-dlt.svg)
+![](images/dda-anchor--transactions-to-dlt.svg)
 *Figure 12. Anchoring DDA transactions to a witness system, e.g. DLT*
 
 The DDAs are always stored in local storage, a copy of which is available with the signing parties and the data intermediary. The hash of the DDA template (Hash (1)) forms the bottom leaf of the Merkle tree. Hash (2) represents the hash of the signed DDA when it is published to the data marketplace while Hash (3) represents the countersigned DDA. At a given point in time, the root hash from the Merkle tree is added to the DLT.
@@ -2072,7 +2072,7 @@ No personal data shall be stored on the ledger. Even a hash value that may corre
 
 The provenance metadata requires a privacy ontology vocabulary in order to have the same interpretation of the terms used across implementations. The privacy ontology will be based on W3C Data Privacy Vocabulary [DPV] which enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [GDPR].
 
-![](docs/images/w3c-dpv.svgg)
+![](images/w3c-dpv.svgg)
 
 The core concepts in DPV represent the most relevant concepts for representing information regarding the what, how, where, who, why of personal data and its processing. Each of these concepts is further elaborated as a taxonomy of concepts in a hierarchical fashion. The DPV provides the following as 'top-level' concepts and relations to associate them with other concepts (only the ones relevant to this specification are listed, for other classes refer to DPV):
 
