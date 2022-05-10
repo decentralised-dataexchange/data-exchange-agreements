@@ -12,8 +12,8 @@
         },
         {
             "title": "Data Disclosure Agreement Protocol Specification",
-            "spec_directory": "./docs/protocol-spec",
-            "output_path": "./docs/www/protocol-spec",
+            "spec_directory": "./docs/protocol",
+            "output_path": "./docs/www/protocol",
             "logo": "../images/iGrant_1900_800_Black.png",
             "logo_link": "https://dxa.igrant.io/",
             "markdown_paths": [
