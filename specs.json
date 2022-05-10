@@ -3,11 +3,21 @@
         {
             "title": "Data Exchange Specifications",
             "spec_directory": "./docs",
-            "output_path": "./docs",
+            "output_path": "./docs/www",
             "logo": "images/iGrant_1900_800_Black.png",
             "logo_link": "https://dxa.igrant.io/",
             "markdown_paths": [
                 "datadisclosure-agreement-specification.md"
+            ]
+        },
+        {
+            "title": "Data Disclosure Agreement Protocol Specification",
+            "spec_directory": "./docs/protocol-spec",
+            "output_path": "./docs/www/protocol-spec",
+            "logo": "../images/iGrant_1900_800_Black.png",
+            "logo_link": "https://dxa.igrant.io/",
+            "markdown_paths": [
+                "datadisclosure-agreement-protocol-specification.md"
             ]
         }
     ]

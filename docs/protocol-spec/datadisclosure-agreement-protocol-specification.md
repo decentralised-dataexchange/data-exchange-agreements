@@ -13,5 +13,28 @@ Mr. Lal Chandran (iGrant.io, Sweden)
 ## Contributors and Reviwers
 Dr. David Goodman (iGrant.io, Sweden)  
 Mr. Jan Linquist (Linaltec, Sweden)  
-Ms. Lotta Lundin (iGrant.io, Sweden)  
+Ms. Lotta Lundin (iGrant.io, Sweden)
+
+## Introduction
+
+## Requirements
+
+- Publish DDA to Marketplace.
+- DDA negotiation between Data Source and Data Using Service.
+- Personal data exchange between DS and DUS
+- DA negotiation between DS and Individual (Use existing DA protocol)
+- DA negotiation between DUS and Individual (Use existing DA protocol)
+- Publish transactions to central source of truth
+
+## Use Cases
+
+## Protocol flow
+
+## Security Considerations
+
+## Privacy Considerations
+
+## Implementation Considerations
+
+## References
 
