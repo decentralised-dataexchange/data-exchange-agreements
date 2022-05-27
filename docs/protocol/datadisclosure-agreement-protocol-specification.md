@@ -61,7 +61,7 @@ Data Source (DS) prepares a DDA template and signs it using the secp256k1 privat
 
 Data Source (DS) constructs a `/dda-marketplace/1.0/publish-request` DIDComm message and send it to Data Intermediary DIDComm agent. An example is provided below.
 
-```
+```json
 {
   "@type": "https://didcomm.org/dda/1.0/publish-request",
   "@id": "999f6c2b-b0e5-4123-aab0-b5f7bfc780c4",
@@ -84,7 +84,7 @@ The Content Identifier (CID) pointing to DDA document is anchored to the Ethereu
 
 Data Intermediary constructs a  `/dda-marketplace/1.0/publish-response` DIDComm message and send it to Data Source. This message contains Ethereum transaction hash for the Data Source to verify the transaction. An example is provided below.
 
-```
+```json
 {
   "@type": "https://didcomm.org/dda/1.0/publish-response",
   "@id": "53f19e0b-5be2-480a-92bc-fcdeabf69ad3",
@@ -103,6 +103,100 @@ Data Intermediary constructs a  `/dda-marketplace/1.0/publish-response` DIDComm 
 #### Data Marketplace lists the DDA
 
 Data marketplace will subscribe to the smart contract events specific to `publishDDACID` function and list the DDA in the marketplace.
+
+### Negotiate Data Disclosure Agreement
+
+DIDComm protocol for interaction between Data Source and Data Using Service to negotiate terms for Data Disclosure Agreement.
+
+
+![](../images/negotiate-dda.png)
+
+#### Messages
+
+The `/dda-negotiation/1.0` protocol consists of these messages:
+
+1. `/dda-negotiation/1.0/propose-terms`
+2. `/dda-negotiation/1.0/accept-terms`
+3. `/dda-negotiation/1.0/reject-terms`
+4. `/dda-negotiation/1.0/accept-dda`
+
+#### Data Using Service propose terms for DDA
+
+Resolve CID to obtain DDA document from IPFS and then construct a counter proposal if the "terms" are not satisfactory. 
+
+ An example is provided below.
+
+```json
+{
+  "@type": "https://didcomm.org/dda-negotiation/1.0/propose-terms",
+  "@id": "999f6c2b-b0e5-4123-aab0-b5f7bfc780c4",
+  "created_time": "1639288911",
+  "@from": "<sender did>",
+  "@to": "<receipient did>",
+  "body": {
+    "data_disclosure_agreement": {}
+  }
+}
+```
+
+#### Data Source accepts the proposed terms
+
+Data Source update the Data Disclosure Agreement to include the proposed terms and signs it. A copy of the same is send as response to Data Using Service.
+
+An example is provided below.
+
+```json
+{
+  "@type": "https://didcomm.org/dda-negotiation/dda-negotiation/1.0/accept-terms",
+  "@id": "53f19e0b-5be2-480a-92bc-fcdeabf69ad3",
+  "~thread": {
+        "thid": "999f6c2b-b0e5-4123-aab0-b5f7bfc780c4"
+    },
+  "created_time": "1639288911",
+  "@from": "<sender did>",
+  "@to": "<receipient did>",
+  "body": {
+    "data_disclosure_agreement": {}
+  }
+}
+```
+
+#### Data Source rejects the proposed terms
+
+An example is provided below.
+
+```json
+{
+  "@type": "https://didcomm.org/dda-negotiation/dda-negotiation/1.0/reject-terms",
+  "@id": "53f19e0b-5be2-480a-92bc-fcdeabf69ad3",
+  "~thread": {
+        "thid": "999f6c2b-b0e5-4123-aab0-b5f7bfc780c4"
+    },
+  "created_time": "1639288911",
+  "@from": "<sender did>",
+  "@to": "<receipient did>"
+}
+```
+
+#### Data Using Service accepts the DDA
+
+Data Using Service counter signs the accepted DDA and send a copy to Data Source.
+
+An example is provided below.
+
+```json
+{
+  "@type": "https://didcomm.org/dda-negotiation/dda-negotiation/1.0/accept-dda",
+  "@id": "1b8381a8-5b7a-44b0-a6b6-037a4aac5609",
+  "created_time": "1639288911",
+  "@from": "<sender did>",
+  "@to": "<receipient did>"
+  "body": {
+    "data_disclosure_agreement": {}
+  }
+}
+```
+
 
 ### Exchange of Personal Data Between Data Source and Data Using Service
 
