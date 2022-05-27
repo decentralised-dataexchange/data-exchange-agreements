@@ -49,7 +49,7 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
                     <article id="content">
                       <h1 id="data-disclosure-agreement-protocol-specification"><a class="toc-anchor" href="#data-disclosure-agreement-protocol-specification" >§</a> Data Disclosure Agreement Protocol Specification</h1>
 <h2 id="abstract"><a class="toc-anchor" href="#abstract" >§</a> Abstract</h2>
-<p>Data disclosure agreements focuses on enables automated agreement handling to enable data sharing and exchange between data sources and data using services. It helps organisations to continue leveraging data while being transparent and legitimate in their data usage in a scalable manner while adhering to data <strong>regulations</strong>. It also provides individuals control over how their data is used and exchanged.</p>
+<p>Data disclosure agreements focuses on enables automated agreement handling to enable data sharing and exchange between data sources and data using services. It helps organisations to continue leveraging data while being transparent and legitimate in their data usage in a scalable manner while adhering to data regulations. It also provides individuals control over how their data is used and exchanged.</p>
 <h2 id="status-of-this-document"><a class="toc-anchor" href="#status-of-this-document" >§</a> Status of This Document</h2>
 <p>Work in progress, version 0.9</p>
 <h2 id="authors"><a class="toc-anchor" href="#authors" >§</a> Authors</h2>
@@ -59,8 +59,6 @@ Mr. Lal Chandran (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io<
 <p>Dr. David Goodman (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)<br>
 Mr. Jan Linquist (Linaltec, Sweden)<br>
 Ms. Lotta Lundin (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)</p>
-<h2 id="introduction"><a class="toc-anchor" href="#introduction" >§</a> Introduction</h2>
-<p>To be written…</p>
 <h3 id="actors"><a class="toc-anchor" href="#actors" >§</a> Actors</h3>
 <ol>
 <li>Data Using Service</li>
@@ -71,36 +69,68 @@ Ms. Lotta Lundin (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io<
 </ol>
 <h2 id="protocol-flow"><a class="toc-anchor" href="#protocol-flow" >§</a> Protocol flow</h2>
 <h3 id="pre-requisite"><a class="toc-anchor" href="#pre-requisite" >§</a> Pre-requisite</h3>
-<p>All the actors involved in the protocol flow is a DIDComm agent. Each interaction between the actors require a DIDComm message. Prior to the PS-SDA protocol flow, actors must establish connection [1] between each other and identify themselves by presenting the necessary proofs [2]. All the actors will have a wallet address and an associated public / private key pair. A wallet address is an external owned account ethereum address. Ethereum addresses are composed of the prefix “0x” (a common identifier for hexadecimal) concatenated with the rightmost 20 bytes of the Keccak-256 hash of the ECDSA public key with the curve secp256k1.</p>
-<h3 id="ds-publish-dda-to-marketplace"><a class="toc-anchor" href="#ds-publish-dda-to-marketplace" >§</a> DS publish DDA to Marketplace</h3>
+<p>All the actors involved in the protocol flow is a DIDComm agent. Each interaction between the actors require a DIDComm message.</p>
+<p>Prior to the PS-SDA protocol flow, actors must establish connection [1] between each other and identify themselves by presenting the necessary proofs [2].</p>
+<p>All the actors will have a wallet address and an associated public / private key pair.</p>
+<p>A wallet address is an external owned account Ethereum address. Ethereum addresses are composed of the prefix “0x” (a common identifier for hexadecimal) concatenated with the rightmost 20 bytes of the Keccak-256 hash of the ECDSA public key with the curve secp256k1.</p>
+<h3 id="out-of-scope"><a class="toc-anchor" href="#out-of-scope" >§</a> Out of scope</h3>
+<p>Marketplace has performed KYC and onboarded DS and DUS.</p>
+<h3 id="data-source-publish-data-disclosure-agreement-to-marketplace"><a class="toc-anchor" href="#data-source-publish-data-disclosure-agreement-to-marketplace" >§</a> Data Source publish Data Disclosure Agreement to Marketplace</h3>
 <p><img src="../images/publish-dda-to-marketplace.png" alt=""></p>
-<h4 id="sign-a-dda-template"><a class="toc-anchor" href="#sign-a-dda-template" >§</a> Sign a DDA template</h4>
-<p>Data Sources prepares a DDA template and signs it using the secp256k1 private key. The signature is prepared by performing the proof algorithm described by W3C Data Integrity 1.0 specification [3].</p>
-<h4 id="publish-signed-dda-template-to-data-intermediary"><a class="toc-anchor" href="#publish-signed-dda-template-to-data-intermediary" >§</a> Publish signed DDA template to Data Intermediary</h4>
-<p>DS constructs a <code>dda/1.0/publish</code> DIDComm message and send it to Data Intermediary DIDComm agent. An example is provided below.</p>
+<h4 id="messages"><a class="toc-anchor" href="#messages" >§</a> Messages</h4>
+<p>The <code>/dda-marketplace/1.0</code> protocol consists of these messages:</p>
+<ol>
+<li><code>/dda-marketplace/1.0/publish-request</code></li>
+<li><code>/dda-marketplace/1.0/publish-response</code></li>
+</ol>
+<h4 id="sign-the-dda-template"><a class="toc-anchor" href="#sign-the-dda-template" >§</a> Sign the DDA template</h4>
+<p>Data Source (DS) prepares a DDA template and signs it using the secp256k1 private key. The signature is prepared by performing the proof algorithm described by W3C Data Integrity 1.0 specification [3].</p>
+<h4 id="send-dda-template-to-data-intermediary"><a class="toc-anchor" href="#send-dda-template-to-data-intermediary" >§</a> Send DDA template to Data Intermediary</h4>
+<p>Data Source (DS) constructs a <code>/dda-marketplace/1.0/publish-request</code> DIDComm message and send it to Data Intermediary DIDComm agent. An example is provided below.</p>
 <pre><code>{
-  &quot;@type&quot;: &quot;https://didcomm.org/dda/1.0/publish&quot;,
+  &quot;@type&quot;: &quot;https://didcomm.org/dda/1.0/publish-request&quot;,
   &quot;@id&quot;: &quot;999f6c2b-b0e5-4123-aab0-b5f7bfc780c4&quot;,
   &quot;created_time&quot;: &quot;1639288911&quot;,
   &quot;@from&quot;: &quot;&lt;sender did&gt;&quot;,
   &quot;@to&quot;: &quot;&lt;receipient did&gt;&quot;,
-  &quot;body&quot;: {},
-  &quot;attachments&quot;: [
-    {
-      &quot;id&quot;: &quot;1&quot;,
-      &quot;description&quot;: &quot;Data Disclosure Agreement&quot;,
-      &quot;data&quot;: {
-        &quot;base64&quot;: &quot;&lt;base64 encoded canonicalised dda&gt;&quot;
-      }
-    }
-  ]
+  &quot;body&quot;: {
+    &quot;data_disclosure_agreement&quot;: {}
+  }
 }
 </code></pre>
+<h4 id="data-intermediary-stores-the-signed-dda-to-cas"><a class="toc-anchor" href="#data-intermediary-stores-the-signed-dda-to-cas" >§</a> Data Intermediary stores the signed DDA to CAS</h4>
+<p>Once the data disclosure agreement is received from Data Source, Data Intermediary stores the document to Content Addressable Storage for e.g. IPFS and obtains the Content Identifier (CID).</p>
+<h4 id="data-intermediary-anchors-cid-to-ethereum"><a class="toc-anchor" href="#data-intermediary-anchors-cid-to-ethereum" >§</a> Data Intermediary anchors CID to Ethereum</h4>
+<p>The Content Identifier (CID) pointing to DDA document is anchored to the Ethereum by executing <code>publishDDACID</code> smart contract function.</p>
+<p>Data Intermediary constructs a  <code>/dda-marketplace/1.0/publish-response</code> DIDComm message and send it to Data Source. This message contains Ethereum transaction hash for the Data Source to verify the transaction. An example is provided below.</p>
+<pre><code>{
+  &quot;@type&quot;: &quot;https://didcomm.org/dda/1.0/publish-response&quot;,
+  &quot;@id&quot;: &quot;53f19e0b-5be2-480a-92bc-fcdeabf69ad3&quot;,
+  &quot;~thread&quot;: {
+        &quot;thid&quot;: &quot;999f6c2b-b0e5-4123-aab0-b5f7bfc780c4&quot;
+    },
+  &quot;created_time&quot;: &quot;1639288911&quot;,
+  &quot;@from&quot;: &quot;&lt;sender did&gt;&quot;,
+  &quot;@to&quot;: &quot;&lt;receipient did&gt;&quot;,
+  &quot;body&quot;: {
+    &quot;txn_hash&quot;: &quot;0xeba2df809e7a612a0a0d444ccfa5c839624bdc00dd29e3340d46df3870f8a30e&quot;
+  }
+}
+</code></pre>
+<h4 id="data-marketplace-lists-the-dda"><a class="toc-anchor" href="#data-marketplace-lists-the-dda" >§</a> Data Marketplace lists the DDA</h4>
+<p>Data marketplace will subscribe to the smart contract events specific to <code>publishDDACID</code> function and list the DDA in the marketplace.</p>
+<h3 id="exchange-of-personal-data-between-data-source-and-data-using-service"><a class="toc-anchor" href="#exchange-of-personal-data-between-data-source-and-data-using-service" >§</a> Exchange of Personal Data Between Data Source and Data Using Service</h3>
+<p>There are 2 modes of exchange:</p>
 <ol>
-<li>Data Intermediary stores the signed DDA to IPFS.</li>
-<li>Execute the smart contract function <code>publishDDADoc</code> to publish the hash.</li>
-<li>Data marketplace will subscribe to the smart contract events and display them.</li>
+<li>Without identification of the Individual</li>
+<li>With Identification of the Individual</li>
 </ol>
+<h4 id="without-identification-the-individual"><a class="toc-anchor" href="#without-identification-the-individual" >§</a> Without identification the Individual</h4>
+<p>In this mode of personal data exchange, DS and DUS do not need individual identity proof before the data exchange e.g. in the case of a DUS using  anonymous or pseudonymous data sharing to offer personalised services.</p>
+<p><img src="../images/exchange-without-identification.png" alt=""></p>
+<h4 id="with-identification-of-individual"><a class="toc-anchor" href="#with-identification-of-individual" >§</a> With identification of Individual</h4>
+<p>DS and DUS require individual identity proof before the data exchange. This is the case, for e.g. during a registration process, check-ins, covid-credential exchange e.t.c</p>
+<p><img src="../images/exchange-with-identification.png" alt=""></p>
 <h2 id="security-considerations"><a class="toc-anchor" href="#security-considerations" >§</a> Security Considerations</h2>
 <h2 id="privacy-considerations"><a class="toc-anchor" href="#privacy-considerations" >§</a> Privacy Considerations</h2>
 <h2 id="implementation-considerations"><a class="toc-anchor" href="#implementation-considerations" >§</a> Implementation Considerations</h2>
@@ -137,8 +167,7 @@ Ms. Lotta Lundin (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io<
 <li><a href="#abstract" >Abstract</a></li>
 <li><a href="#status-of-this-document" >Status of This Document</a></li>
 <li><a href="#authors" >Authors</a></li>
-<li><a href="#contributors-and-reviwers" >Contributors and Reviwers</a></li>
-<li><a href="#introduction" >Introduction</a>
+<li><a href="#contributors-and-reviwers" >Contributors and Reviwers</a>
 <ul>
 <li><a href="#actors" >Actors</a></li>
 </ul>
@@ -146,10 +175,21 @@ Ms. Lotta Lundin (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io<
 <li><a href="#protocol-flow" >Protocol flow</a>
 <ul>
 <li><a href="#pre-requisite" >Pre-requisite</a></li>
-<li><a href="#ds-publish-dda-to-marketplace" >DS publish DDA to Marketplace</a>
+<li><a href="#out-of-scope" >Out of scope</a></li>
+<li><a href="#data-source-publish-data-disclosure-agreement-to-marketplace" >Data Source publish Data Disclosure Agreement to Marketplace</a>
 <ul>
-<li><a href="#sign-a-dda-template" >Sign a DDA template</a></li>
-<li><a href="#publish-signed-dda-template-to-data-intermediary" >Publish signed DDA template to Data Intermediary</a></li>
+<li><a href="#messages" >Messages</a></li>
+<li><a href="#sign-the-dda-template" >Sign the DDA template</a></li>
+<li><a href="#send-dda-template-to-data-intermediary" >Send DDA template to Data Intermediary</a></li>
+<li><a href="#data-intermediary-stores-the-signed-dda-to-cas" >Data Intermediary stores the signed DDA to CAS</a></li>
+<li><a href="#data-intermediary-anchors-cid-to-ethereum" >Data Intermediary anchors CID to Ethereum</a></li>
+<li><a href="#data-marketplace-lists-the-dda" >Data Marketplace lists the DDA</a></li>
+</ul>
+</li>
+<li><a href="#exchange-of-personal-data-between-data-source-and-data-using-service" >Exchange of Personal Data Between Data Source and Data Using Service</a>
+<ul>
+<li><a href="#without-identification-the-individual" >Without identification the Individual</a></li>
+<li><a href="#with-identification-of-individual" >With identification of Individual</a></li>
 </ul>
 </li>
 </ul>
