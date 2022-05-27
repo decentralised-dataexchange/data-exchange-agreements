@@ -277,9 +277,174 @@ Ms. Lotta Lundin (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io<
 <h4 id="with-identification-of-individual"><a class="toc-anchor" href="#with-identification-of-individual" >§</a> With identification of Individual</h4>
 <p>DS and DUS require individual identity proof before the data exchange. This is the case, for e.g. during a registration process, check-ins, covid-credential exchange e.t.c</p>
 <p><img src="../images/exchange-with-identification.png" alt=""></p>
+<p>Individual in the above flow digram maintains 2 identity. They are:</p>
+<ol>
+<li>Identity_DS - Identity of Individual at Data Source</li>
+<li>Identity_DUS - Identity of Individual at Data Using Service</li>
+</ol>
+<h5 id="data-agreement-negotiation-between-data-source-and-individual"><a class="toc-anchor" href="#data-agreement-negotiation-between-data-source-and-individual" >§</a> Data Agreement Negotiation between Data Source and Individual</h5>
+<p>Data Source and Individual performs interaction in conformance to <a path-0="github.com"path-1="decentralised-dataexchange"path-2="automated-data-agreements"path-3="blob"path-4="main"path-5="docs"path-6="didcomm-protocol-spec.md#40ada-rfc-0003-data-agreement-negotiation-protocol-10"href="https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md#40ada-rfc-0003-data-agreement-negotiation-protocol-10" >ADA RFC 0003</a>.</p>
+<h5 id="delegated-data-agreement-negotiation-between-data-using-service-and-individual"><a class="toc-anchor" href="#delegated-data-agreement-negotiation-between-data-using-service-and-individual" >§</a> Delegated Data Agreement Negotiation between Data Using Service and Individual</h5>
+<h4 id="messages-4"><a class="toc-anchor" href="#messages-4" >§</a> Messages</h4>
+<p>The <code>/delegated-da-negotiation/1.0</code> protocol consists of these messages:</p>
+<ol>
+<li><code>/delegated-da-negotiation/1.0/initiate</code></li>
+<li><code>/delegated-da-negotiation/1.0/connection-invitation</code></li>
+<li><code>/delegated-da-negotiation/1.0/offer</code></li>
+<li><code>/delegated-da-negotiation/1.0/accept</code></li>
+<li><code>/delegated-da-negotiation/1.0/reject</code></li>
+<li><code>/delegated-da-negotiation/1.0/forward</code></li>
+</ol>
+<h4 id="data-using-service-requests-data-source-to-collect-sign-off-for-data-agreement-dus-from-identity_ds"><a class="toc-anchor" href="#data-using-service-requests-data-source-to-collect-sign-off-for-data-agreement-dus-from-identity_ds" >§</a> Data Using Service requests Data Source to collect sign off for Data Agreement (DUS) from Identity_DS</h4>
+<p>An example is provided below.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"https://didcomm.org/delegated-da-negotiation/1.0/initiate"</span><span class="token punctuation">,</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"999f6c2b-b0e5-4123-aab0-b5f7bfc780c4"</span><span class="token punctuation">,</span>
+  <span class="token property">"created_time"</span><span class="token operator">:</span> <span class="token string">"1639288911"</span><span class="token punctuation">,</span>
+  <span class="token property">"@from"</span><span class="token operator">:</span> <span class="token string">"&lt;sender did>"</span><span class="token punctuation">,</span>
+  <span class="token property">"@to"</span><span class="token operator">:</span> <span class="token string">"&lt;receipient did>"</span><span class="token punctuation">,</span>
+  <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"da"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="data-source-responds-with-connection-invitation-for-individual"><a class="toc-anchor" href="#data-source-responds-with-connection-invitation-for-individual" >§</a> Data Source responds with connection-invitation for individual</h4>
+<p>An example is provided below.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"https://didcomm.org/delegated-da-negotiation/1.0/initiate"</span><span class="token punctuation">,</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"1b8381a8-5b7a-44b0-a6b6-037a4aac5609"</span><span class="token punctuation">,</span>
+  <span class="token property">"~thread"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"thid"</span><span class="token operator">:</span> <span class="token string">"999f6c2b-b0e5-4123-aab0-b5f7bfc780c4"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"created_time"</span><span class="token operator">:</span> <span class="token string">"1639288911"</span><span class="token punctuation">,</span>
+  <span class="token property">"@from"</span><span class="token operator">:</span> <span class="token string">"&lt;sender did>"</span><span class="token punctuation">,</span>
+  <span class="token property">"@to"</span><span class="token operator">:</span> <span class="token string">"&lt;receipient did>"</span><span class="token punctuation">,</span>
+  <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"invitation"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"serviceEndpoint"</span><span class="token operator">:</span> <span class="token string">"https://didcomm.data-source.com/"</span><span class="token punctuation">,</span>
+      <span class="token property">"routingKeys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"recipientKeys"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"kHJvUaokuKfz4sELM6qCSELiHxBNikjcMnvjo3Kjq8L"</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"cf4bbbab-a60a-472c-9d9f-66852b20f6cb"</span><span class="token punctuation">,</span>
+      <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/connections/1.0/invitation"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="individual-establishes-connection-with-data-source"><a class="toc-anchor" href="#individual-establishes-connection-with-data-source" >§</a> Individual establishes connection with Data Source</h4>
+<p>Data Using Service presents the connection-invitation received from Data Source to Individual as QR code (or other means.). Individual establishes connection with Data Source. [1]</p>
+<h4 id="data-source-identifies-individual-as-identity_ds"><a class="toc-anchor" href="#data-source-identifies-individual-as-identity_ds" >§</a> Data Source identifies Individual as Identity_DS</h4>
+<p>Data Sources identifies Individual by requesting proof presentation for Data Source issued Verifiable Credential [2] that issued when Individual onboarded to Data Source.</p>
+<h4 id="data-source-offers-data-agreement-to-individual-from-data-using-service"><a class="toc-anchor" href="#data-source-offers-data-agreement-to-individual-from-data-using-service" >§</a> Data Source offers Data Agreement to Individual from Data Using Service</h4>
+<p>DS checks if a DA (purpose: 3rd party disclosure) exists between DS and Individual. If exists, Data Sources adds <code>offer_endorsed</code> event in to DA and signs the DA. The signed DA is offered to the Individual.</p>
+<p>An example is provided below.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"delegated-da-negotiation/1.0/offer"</span><span class="token punctuation">,</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"999f6c2b-b0e5-4123-aab0-b5f7bfc780c4"</span><span class="token punctuation">,</span>
+  <span class="token property">"created_time"</span><span class="token operator">:</span> <span class="token string">"1639288911"</span><span class="token punctuation">,</span>
+  <span class="token property">"@from"</span><span class="token operator">:</span> <span class="token string">"&lt;sender did>"</span><span class="token punctuation">,</span>
+  <span class="token property">"@to"</span><span class="token operator">:</span> <span class="token string">"&lt;receipient did>"</span><span class="token punctuation">,</span>
+  <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"da"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="individual-accepts-the-data-agreement"><a class="toc-anchor" href="#individual-accepts-the-data-agreement" >§</a> Individual accepts the Data Agreement</h4>
+<p>In accordance to <a path-0="github.com"path-1="decentralised-dataexchange"path-2="automated-data-agreements"path-3="blob"path-4="main"path-5="docs"path-6="didcomm-protocol-spec.md#4222accept"href="https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md#4222accept" >ADA RFC 0003</a>.</p>
+<h4 id="individual-rejects-the-data-agreement"><a class="toc-anchor" href="#individual-rejects-the-data-agreement" >§</a> Individual rejects the Data Agreement</h4>
+<p>In accordance to <a path-0="github.com"path-1="decentralised-dataexchange"path-2="automated-data-agreements"path-3="blob"path-4="main"path-5="docs"path-6="didcomm-protocol-spec.md#4223reject"href="https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md#4223reject" >ADA RFC 0003</a>.</p>
+<h5 id="release-personal-data-2"><a class="toc-anchor" href="#release-personal-data-2" >§</a> Release personal data</h5>
+<h6 id="messages-5"><a class="toc-anchor" href="#messages-5" >§</a> Messages</h6>
+<p>The <code>/data-exchange/1.0</code> protocol consists of these messages:</p>
+<ol>
+<li><code>/data-exchange/1.0/request-access</code></li>
+<li><code>/data-exchange/1.0/grant-access</code></li>
+</ol>
+<h6 id="data-using-service-request-access-to-personal-data-2"><a class="toc-anchor" href="#data-using-service-request-access-to-personal-data-2" >§</a> Data Using Service request access to personal data</h6>
+<p>Data Using Service requests access to personal data by presenting hash of signed DA document to Data Source.</p>
+<p>An example is provided below.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"https://didcomm.org/dda-negotiation/data-exchange/1.0/request-access"</span><span class="token punctuation">,</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"1b8381a8-5b7a-44b0-a6b6-037a4aac5609"</span><span class="token punctuation">,</span>
+  <span class="token property">"created_time"</span><span class="token operator">:</span> <span class="token string">"1639288911"</span><span class="token punctuation">,</span>
+  <span class="token property">"@from"</span><span class="token operator">:</span> <span class="token string">"&lt;sender did>"</span><span class="token punctuation">,</span>
+  <span class="token property">"@to"</span><span class="token operator">:</span> <span class="token string">"&lt;receipient did>"</span>
+  <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"da_hash"</span><span class="token operator">:</span> <span class="token string">""</span>
+    <span class="token property">"nonce"</span><span class="token operator">:</span> <span class="token string">""</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h6 id="data-source-grant-access-to-personal-data-2"><a class="toc-anchor" href="#data-source-grant-access-to-personal-data-2" >§</a> Data Source grant access to personal data</h6>
+<p>Data Source validates (for e.g. check expiry, check revocation list) and authenticate the DA and release an “access_token” to the protected resources.</p>
+<p>Access Token is constructed according to <a path-0="datatracker.ietf.org"path-1="doc"path-2="html"path-3="rfc7519"href="https://datatracker.ietf.org/doc/html/rfc7519" >JWT IETF 7519</a>. Access Token claimset contain necessary claims for access to the protected resource. Following are mandatory claims.</p>
+<ul>
+<li><code>dda</code>: Hash of the signed dda.</li>
+<li><code>da</code>: Hash of the signed da</li>
+<li><code>resource_endpoints</code>: Array of protected resource endpoints which accepts the Access Token.</li>
+<li><code>iss</code> (issuer): Issuer of the JWT</li>
+<li><code>sub</code> (subject): Subject of the JWT (the user)</li>
+<li><code>aud</code> (audience): Recipient for which the JWT is intended</li>
+<li><code>exp</code> (expiration time): Time after which the JWT expires</li>
+<li><code>nbf</code> (not before time): Time before which the JWT must not be accepted for processing</li>
+<li><code>iat</code> (issued at time): Time at which the JWT was issued; can be used to determine age of the JWT</li>
+<li><code>jti</code> (JWT ID): Unique identifier; can be used to prevent the JWT from being replayed (allows a token to be used only once)</li>
+</ul>
+<p>To ensure secure Access Token issuance, we implement an Authenticated Key Exchange (AKE) cryptographic protocol. AKE provides additional security against potential attacks (MITM, replay attacks, other).</p>
+<p>AKE1 variant, as described in chapters 21.1-21.2 (<a path-0="toc.cryptobook.us"path-1="book.pdf"href="https://toc.cryptobook.us/book.pdf" ><span>https://toc.cryptobook.us/book.pdf</span></a>) is implemented.</p>
+<p>AKE is a non-interactive protocol. The steps are provided below.</p>
+<ol>
+<li>Encrypt the Access Token using secp256k1 public key associated with Data Using Service to obtain the cipher text. (AES-CBC ECIES)</li>
+<li>Generate signature for the cipher text.</li>
+</ol>
+<p>Data Source publish the access token to Ethereum blockchain by executing the <code>publishAccessToken</code> smart contract function. This function accepts 3 params:</p>
+<ul>
+<li><code>cipher_text</code></li>
+<li><code>sig</code></li>
+<li><code>nonce</code></li>
+</ul>
+<p>Data Source constructs <code>/data-exchange/1.0/grant-access</code> DIDComm message with Ethereum transaction hash in the body and respond to Data Using Service.</p>
+<p>An example is provided below.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"https://didcomm.org/dda-negotiation/data-exchange/1.0/grant-access"</span><span class="token punctuation">,</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"999f6c2b-b0e5-4123-aab0-b5f7bfc780c4"</span><span class="token punctuation">,</span>
+  <span class="token property">"~thread"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"thid"</span><span class="token operator">:</span> <span class="token string">"1b8381a8-5b7a-44b0-a6b6-037a4aac5609"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"created_time"</span><span class="token operator">:</span> <span class="token string">"1639288911"</span><span class="token punctuation">,</span>
+  <span class="token property">"@from"</span><span class="token operator">:</span> <span class="token string">"&lt;sender did>"</span><span class="token punctuation">,</span>
+  <span class="token property">"@to"</span><span class="token operator">:</span> <span class="token string">"&lt;receipient did>"</span>
+  <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"txn_hash"</span><span class="token operator">:</span> <span class="token string">"0xeba2df809e7a612a0a0d444ccfa5c839624bdc00dd29e3340d46df3870f8a30e"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h6 id="data-using-service-obtains-the-access-token-2"><a class="toc-anchor" href="#data-using-service-obtains-the-access-token-2" >§</a> Data Using Service obtains the access token</h6>
+<p>Data Using Service resolves the transaction to obtains the cipher_text, sig and nonce. Proceeds to perform following steps.</p>
+<ol>
+<li>Decrypts the cipher_text using private key. (AES-CBC ECIES)</li>
+<li>Verifies the signature.</li>
+<li>Decode the payload in Access Token JWT to obtains claims and identify the endpoints accessible for the access token.</li>
+</ol>
+<blockquote>
+<p>Note: Cipher text format - <code>&lt;iv&gt;&lt;raw ephemeral public key&gt;&lt;encrypted data&gt;</code></p>
+</blockquote>
+<h3 id="smart-contracts"><a class="toc-anchor" href="#smart-contracts" >§</a> Smart Contracts</h3>
+<p>Following are the smart contracts that will be used in the protocol:</p>
+<ul>
+<li><a path-0="github.com"path-1="uport-project"path-2="ethr-did-registry"path-3="blob"path-4="develop"path-5="contracts"path-6="EthereumDIDRegistry.sol"href="https://github.com/uport-project/ethr-did-registry/blob/develop/contracts/EthereumDIDRegistry.sol" >Ethereum DID Registry smart contract for did:ethr identifiers</a></li>
+<li>DDA Marketplace smart contract
+<ul>
+<li><code>publishDDACID(CID)</code></li>
+<li><code>publishAccessToken(cipher_text, sig, nonce)</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="security-considerations"><a class="toc-anchor" href="#security-considerations" >§</a> Security Considerations</h2>
 <h2 id="privacy-considerations"><a class="toc-anchor" href="#privacy-considerations" >§</a> Privacy Considerations</h2>
 <h2 id="implementation-considerations"><a class="toc-anchor" href="#implementation-considerations" >§</a> Implementation Considerations</h2>
+<p>Successful execution of protocols described in this document, might involve invoking sub-protocols, a co-routine approach can simplify this, where it is possible to compose multiple protocol to achieve a complex goal. For e.g. During exchange of personal data with identification of Individual, it is necessary of Data Source to invoke “Connections” protocol and then “Verifications” protocol e.t.c, after which Data Source get’s back to Data Using Service with positive or negative response. All this while Data Using Service, can check the status of protocol with Data Source. This approach is being discussed in detail at <a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="tree"path-4="main"path-5="concepts"path-6="0478-coprotocols"href="https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0478-coprotocols" >Aries RFC 0478</a>.</p>
 <h2 id="references"><a class="toc-anchor" href="#references" >§</a> References</h2>
 <ol>
 <li>Aries RFC 0160 Connection protocol - <a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="tree"path-4="main"path-5="features"path-6="0160-connection-protocol"href="https://github.com/hyperledger/aries-rfcs/tree/main/features/0160-connection-protocol" ><span>https://github.com/hyperledger/aries-rfcs/tree/main/features/0160-connection-protocol</span></a></li>
@@ -345,8 +510,17 @@ Ms. Lotta Lundin (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io<
 <ul>
 <li><a href="#without-identification-the-individual" >Without identification the Individual</a></li>
 <li><a href="#with-identification-of-individual" >With identification of Individual</a></li>
+<li><a href="#messages-4" >Messages</a></li>
+<li><a href="#data-using-service-requests-data-source-to-collect-sign-off-for-data-agreement-dus-from-identity_ds" >Data Using Service requests Data Source to collect sign off for Data Agreement (DUS) from Identity_DS</a></li>
+<li><a href="#data-source-responds-with-connection-invitation-for-individual" >Data Source responds with connection-invitation for individual</a></li>
+<li><a href="#individual-establishes-connection-with-data-source" >Individual establishes connection with Data Source</a></li>
+<li><a href="#data-source-identifies-individual-as-identity_ds" >Data Source identifies Individual as Identity_DS</a></li>
+<li><a href="#data-source-offers-data-agreement-to-individual-from-data-using-service" >Data Source offers Data Agreement to Individual from Data Using Service</a></li>
+<li><a href="#individual-accepts-the-data-agreement" >Individual accepts the Data Agreement</a></li>
+<li><a href="#individual-rejects-the-data-agreement" >Individual rejects the Data Agreement</a></li>
 </ul>
 </li>
+<li><a href="#smart-contracts" >Smart Contracts</a></li>
 </ul>
 </li>
 <li><a href="#security-considerations" >Security Considerations</a></li>
