@@ -16,6 +16,11 @@
             "output_path": "./docs/www/protocol",
             "logo": "../images/iGrant_1900_800_Black.png",
             "logo_link": "https://dxa.igrant.io/",
+            "source": {
+                "host": "github",
+                "account": "decentralised-dataexchange",
+                "repo": "data-exchange-agreements"
+            },
             "markdown_paths": [
                 "datadisclosure-agreement-protocol-specification.md"
             ]

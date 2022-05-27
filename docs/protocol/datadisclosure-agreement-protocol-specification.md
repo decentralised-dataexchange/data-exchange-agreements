@@ -15,6 +15,12 @@ Dr. David Goodman (iGrant.io, Sweden)
 Mr. Jan Linquist (Linaltec, Sweden)  
 Ms. Lotta Lundin (iGrant.io, Sweden)
 
+## Participate
+
+~ [GitHub repo](https://github.com/decentralised-dataexchange/data-exchange-agreements)
+~ [File a bug](https://github.com/decentralised-dataexchange/data-exchange-agreements/issues)
+~ [Commit history](https://github.com/decentralised-dataexchange/data-exchange-agreements/commits/main)
+
 ### Actors
 
 1. Data Using Service
