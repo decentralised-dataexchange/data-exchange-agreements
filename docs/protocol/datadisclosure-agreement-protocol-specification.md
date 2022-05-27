@@ -21,6 +21,8 @@ Ms. Lotta Lundin (iGrant.io, Sweden)
 ~ [File a bug](https://github.com/decentralised-dataexchange/data-exchange-agreements/issues)
 ~ [Commit history](https://github.com/decentralised-dataexchange/data-exchange-agreements/commits/main)
 
+## Protocol flow
+
 ### Actors
 
 1. Data Using Service
@@ -28,8 +30,6 @@ Ms. Lotta Lundin (iGrant.io, Sweden)
 3. Individual
 4. Data Intermediary
 5. Data Marketplace
-
-## Protocol flow
 
 ### Pre-requisite
 
