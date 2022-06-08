@@ -302,6 +302,7 @@ Appendix D in this specification provides a detailed ontology analysis of what n
 Figure 8 elaborates on how the provenance is captured during a data exchange transaction in Scenario 01 where there is no need for identity proof (E.g. Anonymised data exchange). 
 
 ![](images/dda-establish-data-provenance-no-ID-proof.svg)
+
 *Figure 8: Scenario 01: DA, DDA workflows without ID proof (E.g. anonymised data exchange)*
 
 **Scenario 02:** DS and DUS require individual identity proof before the data exchange. This is the case, for e.g., during a registration process, check-ins, covid-credential exchange etc. This is illustrated in Figure 9.
