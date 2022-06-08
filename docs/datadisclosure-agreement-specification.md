@@ -291,6 +291,7 @@ Capture
 #### Publish and Sign DDA sequence diagram
 
 ![](images/dda-publish-and-sign-workflow.svg)
+
 *Figure 7: DDA - Publish and sign sequence*
 
 #### Data Provenance 
