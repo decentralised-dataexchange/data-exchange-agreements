@@ -29,6 +29,7 @@ The key deliverables of the project are as given. The table summarises the relea
 | :--------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | D1 / D2    | 04-February 2022 | Function specification v1.0.0                                                                                                                                                               |
 |            | 28-April 2022    | Data Disclosure Agreement specification ([Latest version](https://github.com/decentralised-dataexchange/data-exchange-agreements/blob/main/docs/datadisclosure-agreement-specification.md)) |
+|            | 09-June 2022    | Data Disclosure Agreement protocol specification ([Latest version](https://github.com/decentralised-dataexchange/data-exchange-agreements/blob/main/docs/protocol/datadisclosure-agreement-protocol-specification.md)) |
 
 ## Contributing
 
