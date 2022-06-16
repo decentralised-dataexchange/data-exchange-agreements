@@ -1,26 +1,29 @@
 # Data Disclosure Agreement Protocol Specification
 
-## Abstract
-A Data Disclosure Agreement (DDA) enables automated agreement handling for data exchange between a Data Source (DS) and Data Using Service (DUS). It helps organisations to continue leveraging their data assets while being transparent and legitimate in their data usage. Automated agreement handling is a requisite for a scalable and regulatory-compliant data marketplace.. It also provides individuals control over how their data is used and exchanged.
-## Status of This Document
-version 1.0.0
-## Authors
+**Specification Status:** version 1.0.0 (Ready for impplementation)
+This is reviewed and implementation has started. This spec is live and is being iterated as part of the PS-SDA project in NGI-ONTOCHAIN. The project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957338.
+
+**Latest Draft:** [Avaialble here](https://dda.igrant.io)
+
+**Editors:**
 Mr. George J Padayatti (iGrant.io, Sweden)  
 Mr. Lal Chandran (iGrant.io, Sweden)
 
-## Contributors and Reviwers
-Dr. David Goodman (iGrant.io, Sweden)  
-Mr. Jan Linquist (Linaltec, Sweden)  
+**Contributors and Reviwers:**
 Ms. Lotta Lundin (iGrant.io, Sweden)
+Dr. David Goodman (iGrant.io, Sweden)  
+Mr. Jan Linquist (Linaltec, Sweden) 
 
-## Participate
-
+**Participate**
 - [GitHub repo](https://github.com/decentralised-dataexchange/data-exchange-agreements)
 - [File a bug](https://github.com/decentralised-dataexchange/data-exchange-agreements/issues)
 - [Commit history](https://github.com/decentralised-dataexchange/data-exchange-agreements/commits/main)
 
-## Protocol flow
+------------------------------------
+## Abstract
+A Data Disclosure Agreement (DDA) enables automated agreement handling for data exchange between a Data Source (DS) and Data Using Service (DUS). It helps organisations to continue leveraging their data assets while being transparent and legitimate in their data usage. Automated agreement handling is a requisite for a scalable and regulatory-compliant data marketplace.. It also provides individuals control over how their data is used and exchanged.
 
+## Protocol flow
 ### Actors
 
 1. Data Using Service (DUS)

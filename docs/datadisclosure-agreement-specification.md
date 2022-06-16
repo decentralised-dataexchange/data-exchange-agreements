@@ -1,14 +1,12 @@
 # Data Disclosure Agreement (DDA) Specification
 
-
 **Specification Status:** version 1.0.0
 
 This is reviewed and implementation has started. This spec is live and is being iterated as part of the PS-SDA project in NGI-ONTOCHAIN. The project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957338.
 
-**Latest Draft:** 
+**Latest Draft:** [Avaialble here](https://dda.igrant.io/protocol)
 
 **Editors:**
-
 - Mr. George Padayatti (iGrant.io, Sweden)  
 - Mr. Jan Linquist (Linaltec, Sweden)  
 - Mr. Lal Chandran (iGrant.io, Sweden)
@@ -21,7 +19,8 @@ This is reviewed and implementation has started. This spec is live and is being 
 **Participate:**
 
 - [GitHub repo](https://github.com/decentralised-dataexchange/data-exchange-agreements)
-- [File a bug](https://github.com/decentralised-dataexchange/data-exchange-agreements/issues)
+- [File a bug](https://github.com/decentralised-dataexchange/data-exchange-agreements/issues) 
+- [Commit history](https://github.com/decentralised-dataexchange/data-exchange-agreements/commits/main)
 
 ------------------------------------
 ## Abstract
