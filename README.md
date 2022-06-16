@@ -17,7 +17,7 @@
 
 ## About
 
-This repository will host the specifications for data disclosure agreements (DDA) as part of NGI-ONTOCHAIN project. This is part of the deliverables for Provenance services with smart data agreement (PS-SDA) project that has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957338.
+This repository will host the specifications for data disclosure agreements (DDA). This is part of the deliverables for Provenance services with smart data agreement (PS-SDA) project that has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957338.
 
 The PS-SDA project is an open source conrtibution lead by iGrant.io (Sweden), MyData (Sweden) and Linaltec (Sweden). Read more on the project at NGI ONTOCHAIN page: **https://ontochain.ngi.eu/content/ps-sda**.
 
