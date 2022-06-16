@@ -1,9 +1,9 @@
 # Data Disclosure Agreement (DDA) Specification
 
 
-**Specification Status:** version 0.9.2
+**Specification Status:** version 1.0.0
 
-Work in progress (v0.9) with implementation started. This spec is live and is being iterated as part of NGI-Trust projects.
+This is reviewed and implementation has started. This spec is live and is being iterated as part of the PS-SDA project in NGI-ONTOCHAIN. The project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957338.
 
 **Latest Draft:** 
 
@@ -26,7 +26,7 @@ Work in progress (v0.9) with implementation started. This spec is live and is be
 ------------------------------------
 ## Abstract
 
-Data disclosure agreements focuses on enabling automated agreement handling to enable data sharing and exchange between data sources and data using services. Together with data agreements, it helps organisations to leveraging personal data while being transparent and legitimate in their data usage in a scalable manner while adhering to data regulations (such as the GDPR). It also provides individuals control over how their data is used and exchanged.
+A Data Disclosure Agreement (DDA) enables automated agreement handling for data exchange between a Data Source (DS) and Data Using Service (DUS). It helps organisations to continue leveraging their data assets while being transparent and legitimate in their data usage. Automated agreement handling is a requisite for a scalable and regulatory-compliant data marketplace.. It also provides individuals control over how their data is used and exchanged.
 
 
 ## Introduction
@@ -57,10 +57,10 @@ iGrant.io is a data exchange platform that helps organisations access personal d
 
 In a data exchange ecosystem, there are a number of agreements that are required to legally validate data exchanges. This chapter introduces various data exchange agreements (DEXA) and the relationships that exist between organisations and individuals, depending on their roles in different personal data usage scenarios. The various agreements involved can be classified into four broad categories as shown in Figure 2 below. These are agreements between:
 
-1. an individual and an organisation, 
-2. two organisations (DS and DUS), 
-3. an organisation and its supplier and 
-4. two individuals 
+1. An individual and an organisation, 
+2. Two organisations (DS and DUS), 
+3. An organisation and its supplier and 
+4. Two individuals
 
 ![](images/data-exchange-landscape.svg)
 *Figure 2. Data exchange agreement landscape*
@@ -590,6 +590,7 @@ The key interfaces are APIs classified under the key actors listed below. An ear
    </td>
   </tr>
 </table>
+
 #### Auditors
 
 <table>
