@@ -91,11 +91,11 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 <p>Any organisation undergoing digital transformation needs to ensure that it can cater to the above, so individuals continue to say “yes” to sharing their data. Initiatives like MyData Operator and the proposed EU Data Governance Act point to the need for data intermediaries ​to enable the above for individuals and businesses.</p>
 <p>Data exchange agreements aim to enhance data governance to ​increase transparency and authenticity as ​critical elements for digital trust. This specification describes how the key actors above can capture, view or disclose the provenance trail of a personal data exchange transaction​,​ starting with ​creating data disclosure agreements during any such data exchanges. It also specifies how a DS can define rules for data processing (to demonstrate regulatory compliance etc.) in a data exchange transaction.</p>
 <h3 id="data-intermediaries-enabling-data-exchange"><a class="toc-anchor" href="#data-intermediaries-enabling-data-exchange" >§</a> Data intermediaries enabling data exchange</h3>
-<p><a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a> is a data exchange platform that helps organisations access personal data in a sustainable and human-centric manner. Using <a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>’s data exchange services, organisations gain access to verifiable, auditable and data regulatory compliant personal data. Every data exchange has an associated DA that records conditions for an organisation to process personal data in accordance with data regulations, such as the GDPR and the Data Governance Act, as illustrated in Figure 1 below.</p>
+<p><a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a> is a data exchange platform that helps organisations access personal data in a sustainable and human-centric manner. Using <a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>’s data exchange services, organisations gain access to verifiable, auditable and data regulatory compliant personal data. Every data exchange transaction has an associated DA that records conditions for an organisation to process personal data in accordance with data regulations, such as the GDPR and the Data Governance Act, as illustrated in Figure 1 below.</p>
 <p><img src="images/iGrant.io_MyDataOperator.svg" alt="">
 <em>Figure 1. A data exchange ecosystem using a data intermediary</em></p>
 <h3 id="data-exchange-agreement-landscape"><a class="toc-anchor" href="#data-exchange-agreement-landscape" >§</a> Data exchange agreement landscape</h3>
-<p>In a data exchange ecosystem, there are a number of agreements that are required to legally validate data exchanges. This chapter introduces various data exchange agreements (DEXA) and the relationships that exist between organisations and individuals, depending on their roles in different personal data usage scenarios. The various agreements involved can be classified into four broad categories as shown in Figure 2 below. These are agreements between:</p>
+<p>In a data exchange ecosystem, there are a number of agreements that are required to legally validate data exchanges. This chapter introduces various Data Exchange Agreements (DEXA) and the relationships that exist between organisations and individuals, depending on their roles in different personal data usage scenarios. The various agreements involved can be classified into four broad categories as shown in Figure 2 below. These are agreements between:</p>
 <ol>
 <li>An individual and an organisation,</li>
 <li>Two organisations (DS and DUS),</li>
@@ -132,11 +132,6 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 <p>There are different models that can be used to achieve data provenance. This includes the Open Provenance Model (OPM) and W3C PROV. Both these models have basic entity, activity and agent (people) components. The difference comes with W3C PROV providing additional terms to help with explaining the details of activity through the usage of “plans”. These plans set the details of the execution of an activity.</p>
 <p>In the context of a personal data exchange transaction, the agents are the actors involved in the personal data exchange transaction like the individuals (or data subjects) and organisations (DS and DUS), entities are the data being exchanged. The activities include create/read/update/delete (CRUD) operations on these agreements and will be further elaborated in this document. The model in Figure 3 is taken from the W3C PROV Primer to illustrate a high-level overview.</p>
 <p>In a personal data transaction, provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility and the re-use of personal data. Once this is achieved, assertions could be made with regard to the use of contextual metadata (e.g. events in data agreements and data disclosure agreements) and can themselves become important records with their own provenance. Once provenance metadata is collected it is possible to check claims that are being made in the records.</p>
-<h2 id="regulations"><a class="toc-anchor" href="#regulations" >§</a> Regulations</h2>
-<h3 id="legal-requirements"><a class="toc-anchor" href="#legal-requirements" >§</a> Legal requirements</h3>
-<p>GDPR and Data governance act
-Data act and AI regulations</p>
-<h3 id="social-norms-and-ethical-practices"><a class="toc-anchor" href="#social-norms-and-ethical-practices" >§</a> Social norms and ethical practices</h3>
 <h2 id="data-exchange-agreement-overview"><a class="toc-anchor" href="#data-exchange-agreement-overview" >§</a> Data Exchange Agreement overview</h2>
 <p>Figure 4 below illustrates a typical scenario where an organisation, Org. A, uses a DA to share data externally to Org B and Org C. Individual instances of the DA are signed by individuals X and Y. A DDA is used to govern the data exchange between Org A and Orgs B and C.</p>
 <p><img src="images/data-exchange-provenance-scenarios.svg" alt="">
@@ -191,7 +186,7 @@ Data act and AI regulations</p>
   <tr>
    <td>2.1
    </td>
-   <td>If the organisation wishes to expose personal data to a third party, it creates the DDA template, If required, publishes to a data marketplace
+   <td>If the organisation wishes to expose personal data to a third party, it creates the DDA offer, If required, publishes to a data marketplace
 <p>
 <em>Output: DDA is available and is ready for any DUS to sign. </em>
 <p>
@@ -249,7 +244,7 @@ Capture
   <tr>
    <td>3.1
    </td>
-   <td>If the organisation (DUS) wishes to consume data, it checks the available DDAs in the marketplace.
+   <td>If the organisation (DUS) wishes to consume data, it checks the available DDA offers in the marketplace.
    </td>
    <td>Definition and Preparation
    </td>
@@ -310,24 +305,24 @@ Capture
 </ul>
 <p>During a DDA capture process, the signing transaction is registered on the chain to enable provenance. The solution will leverage features offered by ONTOCHAIN to develop and deploy a smart contract to facilitate seamless data exchanges between two organisations.</p>
 <h4 id="publish-to-the-marketplace-via-a-dlt"><a class="toc-anchor" href="#publish-to-the-marketplace-via-a-dlt" >§</a> Publish to the marketplace via a DLT</h4>
-<p>During the creation of the data disclosure agreement, the DS creates a token of ownership for the DDA template and registers it to the blockchain. The DDA template is stored in the (Inter Planetary File System) IPFS. The signing process is facilitated  by a data intermediary service, such as <a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, which acts as a notary and registers the signed DDA evidence (hash) to the blockchain.</p>
+<p>During the creation of the data disclosure agreement, the DS creates a token of ownership for the DDA offer and registers it to the blockchain. The DDA offer is stored in the (Inter Planetary File System) IPFS. The signing process is facilitated  by a data intermediary service, such as <a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, which acts as a notary and registers the signed DDA evidence (hash) to the blockchain.</p>
 <p><img src="images/dda-publish-ds-in-blockchain-ecosystem.svg" alt="">
 <em>Figure 10. Publishing of DDAs by DS in the blockchain ecosystem</em></p>
 <p>The DS and the DUS do not need to understand the underlying witness system and cost mechanisms of using a DLT, e.g. Ethereum, bitcoin etc. The use of data intermediary service also reduces the costs associated with the footprint on the blockchain and solves the key issue of trust, e.g. who’s signed DDA do you trust?</p>
-<p>The transaction data is on-chain as per chapter “Ontologies/ On-Chain Data”, with the ownership of the DDA and event signature needed for data provenance. The DDA template is stored in the IPFS.</p>
-<h4 id="countersigning-of-ddas-by-the-dus-via-a-dlt"><a class="toc-anchor" href="#countersigning-of-ddas-by-the-dus-via-a-dlt" >§</a> Countersigning of DDAs by the DUS via a DLT</h4>
-<p>Any DUS can view the DS and what data they are offering to share, countersign a DDA and use the data based on the terms set in the agreement as shown below.</p>
+<p>The transaction data is on-chain as per chapter “Ontologies/ On-Chain Data”, with the ownership of the DDA and event signature needed for data provenance. The DDA offer is stored in the IPFS.</p>
+<h4 id="countersigning-of-dda-offers-by-the-dus-via-a-dlt"><a class="toc-anchor" href="#countersigning-of-dda-offers-by-the-dus-via-a-dlt" >§</a> Countersigning of DDA offers by the DUS via a DLT</h4>
+<p>Any DUS can view what data DSs are offering to share, negotiate new terms and eventually sign a DDA and use the data based on the terms set in the agreement as shown below.</p>
 <p><img src="images/dda-countersigning-by-dus-in-blockchain-ecosystem.svg" alt="">
 <em>Figure 11. Countersigning of DDA by DUS in the blockchain ecosystem</em></p>
 <h4 id="off-chain-and-on-chain-handling-of-data-disclosure-agreements"><a class="toc-anchor" href="#off-chain-and-on-chain-handling-of-data-disclosure-agreements" >§</a> Off-chain and On-chain handling of data disclosure agreements</h4>
-<p>As illustrated in Figure 11 above, once the DDA is prepared, the signed DDA (by the DS) is broadcasted to the data intermediary. The data intermediary waits for the countersigned DDA from the DUS(s) and anchors it to the DLT. The detailed mechanism involved in anchoring (via a smart contract) to the underlying witness system (e.g. DLTs like blockchain, hash graphs) taking into account the key considerations (in chapter 3.2] is as pictured below Figure 12.</p>
+<p>As illustrated in Figure 11 above, once the DDA is prepared, the DDA offer (by the DS) is published in the marketplace by the Data Intermediary. The Data Intermediary awaits the signed DDA (by both DS and DUS) before anchoring it to the DLT. The data intermediary waits for the countersigned DDA from the DUS(s) and anchors it to the DLT. The detailed mechanism involved in anchoring (via a smart contract) to the underlying witness system (e.g. DLTs like blockchain, hash graphs) taking into account the key considerations (in chapter 3.2] is as pictured below Figure 12.</p>
 <p><img src="images/dda-anchor--transactions-to-dlt.svg" alt="">
 <em>Figure 12. Anchoring DDA transactions to a witness system, e.g. DLT</em></p>
-<p>The DDAs are always stored in local storage, a copy of which is available with the signing parties and the data intermediary. The hash of the DDA template (Hash (1)) forms the bottom leaf of the Merkle tree. Hash (2) represents the hash of the signed DDA when it is published to the data marketplace while Hash (3) represents the countersigned DDA. At a given point in time, the root hash from the Merkle tree is added to the DLT.</p>
-<h4 id="334handling-release-of-personal-data"><a class="toc-anchor" href="#334handling-release-of-personal-data" >§</a> 3.3.4	Handling release of personal data</h4>
+<p>The DDAs are always stored in local storage, a copy of which is available with the signing parties and the data intermediary. The hash of the DDA offer (Hash (1)) forms the bottom leaf of the Merkle tree. Hash (2) represents the hash of the signed DDA when it is published to the data marketplace while Hash (3) represents the countersigned DDA. At a given point in time, the root hash from the Merkle tree is added to the DLT.</p>
+<h4 id="handling-release-of-personal-data"><a class="toc-anchor" href="#handling-release-of-personal-data" >§</a> Handling release of personal data</h4>
 <p>When the actual exchange of data happens from the DS to the DUS, an event and a corresponding proof is appended to the Data Disclosure Agreement. This provides for data exchange provenance to any interested parties.</p>
 <h2 id="user-stories-and-use-case-analysis"><a class="toc-anchor" href="#user-stories-and-use-case-analysis" >§</a> User stories and use case analysis</h2>
-<h3 id="41individual"><a class="toc-anchor" href="#41individual" >§</a> 4.1	Individual</h3>
+<h3 id="individual"><a class="toc-anchor" href="#individual" >§</a> Individual</h3>
 <table>
   <tr>
    <td><strong>Use case</strong>
@@ -350,7 +345,7 @@ Capture
   <tr>
    <td>View DDAs
    </td>
-   <td>View the DDA template from the DS with the usage of personal data.
+   <td>View the DDA offer from the DS with the usage of personal data.
    </td>
   </tr>
   <tr>
@@ -482,7 +477,7 @@ Capture
   <tr>
    <td>POST /organisation/data-disclosure-agreement
    </td>
-   <td>Create DDA template
+   <td>Create DDA offer
    </td>
   </tr>
   <tr>
@@ -613,7 +608,7 @@ Capture
    </td>
    <td>TRUE
    </td>
-   <td>Identifier to the template of the data disclosure agreement
+   <td>Identifier to the DDA offer
    </td>
   </tr>
   <tr>
@@ -621,7 +616,7 @@ Capture
    </td>
    <td>TRUE
    </td>
-   <td>Version number of the data disclosure agreement template
+   <td>Version number of the DDA offer
    </td>
   </tr>
   <tr>
@@ -1980,7 +1975,7 @@ Specialization
 <p>*() indicates optionality or condition
 (1) - Can support certification</p>
 <h4 id="e14provenance-metadata-relation-with-the-ledger"><a class="toc-anchor" href="#e14provenance-metadata-relation-with-the-ledger" >§</a> E.1.4	Provenance metadata relation with the ledger</h4>
-<p>All DS disclose what data they are ready to expose in the data exchange ecosystem by publishing their DDA template(s). Each DUS can decide if their signed DDA i.e. what personal data they are consuming should be published or not.</p>
+<p>All DS disclose what data they are ready to expose in the data exchange ecosystem by publishing their DDA offer(s). Each DUS can decide if their signed DDA i.e. what personal data they are consuming should be published or not.</p>
 <p>No personal data shall be stored on the ledger. Even a hash value that may correlate with a data subject like a decentralised identifier is considered identifiable and is marked as sensitive. Personal data will be off-ledger. In order to make the DA verifiable or auditable in iExec confidential computing, a smart data agreement (SDA) is required.</p>
 <h3 id="e2privacy-ontology-vocabulary"><a class="toc-anchor" href="#e2privacy-ontology-vocabulary" >§</a> E.2	Privacy ontology vocabulary</h3>
 <p>The provenance metadata requires a privacy ontology vocabulary in order to have the same interpretation of the terms used across implementations. The privacy ontology will be based on W3C Data Privacy Vocabulary [DPV] which enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [GDPR].</p>
@@ -2077,12 +2072,6 @@ W3C DID Registry: <a path-0="www.w3.org"path-1="TR"path-2="did-spec-registries"h
 <li><a href="#data-provenance" >Data provenance</a></li>
 </ul>
 </li>
-<li><a href="#regulations" >Regulations</a>
-<ul>
-<li><a href="#legal-requirements" >Legal requirements</a></li>
-<li><a href="#social-norms-and-ethical-practices" >Social norms and ethical practices</a></li>
-</ul>
-</li>
 <li><a href="#data-exchange-agreement-overview" >Data Exchange Agreement overview</a>
 <ul>
 <li><a href="#dexa-high-level-workflow" >DEXA High-level workflow</a></li>
@@ -2095,16 +2084,16 @@ W3C DID Registry: <a path-0="www.w3.org"path-1="TR"path-2="did-spec-registries"h
 <li><a href="#on-chain-and-off-chain-agreements-for-provenance-trail" >On-chain and off-chain agreements for provenance trail</a>
 <ul>
 <li><a href="#publish-to-the-marketplace-via-a-dlt" >Publish to the marketplace via a DLT</a></li>
-<li><a href="#countersigning-of-ddas-by-the-dus-via-a-dlt" >Countersigning of DDAs by the DUS via a DLT</a></li>
+<li><a href="#countersigning-of-dda-offers-by-the-dus-via-a-dlt" >Countersigning of DDA offers by the DUS via a DLT</a></li>
 <li><a href="#off-chain-and-on-chain-handling-of-data-disclosure-agreements" >Off-chain and On-chain handling of data disclosure agreements</a></li>
-<li><a href="#334handling-release-of-personal-data" >3.3.4	Handling release of personal data</a></li>
+<li><a href="#handling-release-of-personal-data" >Handling release of personal data</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#user-stories-and-use-case-analysis" >User stories and use case analysis</a>
 <ul>
-<li><a href="#41individual" >4.1	Individual</a></li>
+<li><a href="#individual" >Individual</a></li>
 <li><a href="#auditors" >Auditors</a></li>
 </ul>
 </li>
