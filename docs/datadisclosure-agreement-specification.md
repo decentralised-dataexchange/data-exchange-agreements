@@ -4,7 +4,7 @@
 
 This is reviewed and implementation has started. This spec is live and is being iterated as part of the PS-SDA project in NGI-ONTOCHAIN. The project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957338.
 
-**Latest Draft:** [Avaialble here](https://dda.igrant.io/protocol)
+**Latest Draft:** [Avaialble here](https://dda.igrant.io)
 
 **Editors:**
 - Mr. George Padayatti (iGrant.io, Sweden)  
