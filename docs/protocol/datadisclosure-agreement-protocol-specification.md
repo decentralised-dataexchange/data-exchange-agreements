@@ -7,7 +7,7 @@ Data disclosure agreements focuses on enables automated agreement handling to en
 Work in progress, version 0.9
 
 ## Authors
-Mr. George J Padayatti (iGrant.io, Sweden)  
+Mr. George Padayatti (iGrant.io, Sweden)  
 Mr. Lal Chandran (iGrant.io, Sweden)
 
 ## Contributors and Reviwers

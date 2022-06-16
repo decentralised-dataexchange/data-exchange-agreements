@@ -20,4 +20,4 @@ jobs:
 
       - name: Release changes
         id: release_changes
-        run: push-dir --dir=docs/www --branch=gh-pages
+        run: node_modules/push-dir/bin/push-dir.js --dir=docs/www --branch=gh-pages
