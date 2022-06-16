@@ -26,9 +26,15 @@ jobs:
       - name: Update docs html
         run: |
           npm run render
-          git add .
-          git commit -m "Update docs html"
-          git push origin main
+          cp -R docs/images docs/www/
+          if ! (git diff --exit-code origin/main..main > /dev/null) \
+            || ! (git diff --exit-code main > /dev/null) \
+            || ! [[ -z "$(git status --porcelain)" ]] ; then
+            git add .
+            git commit -m "Update docs html"
+            git push origin main
+            exit 1
+          fi
 
       - name: Release changes
         id: release_changes
