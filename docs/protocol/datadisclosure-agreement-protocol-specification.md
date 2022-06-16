@@ -5,7 +5,7 @@ A Data Disclosure Agreement (DDA) enables automated agreement handling for data 
 ## Status of This Document
 version 1.0.0
 ## Authors
-Mr. George Padayatti (iGrant.io, Sweden)  
+Mr. George J Padayatti (iGrant.io, Sweden)  
 Mr. Lal Chandran (iGrant.io, Sweden)
 
 ## Contributors and Reviwers
