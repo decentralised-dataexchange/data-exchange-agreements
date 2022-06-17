@@ -6,7 +6,7 @@ This is reviewed and implementation has started. This spec is live and is being 
 **Latest Draft:** [Avaialble here](https://dda.igrant.io)
 
 **Editors:**
-Mr. George J Padayatti (iGrant.io, Sweden)  
+Mr. George Padayatti (iGrant.io, Sweden)  
 Mr. Lal Chandran (iGrant.io, Sweden)
 
 **Contributors and Reviwers:**
