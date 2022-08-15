@@ -1,0 +1,200 @@
+{
+    "@context": {
+        "dda": "https://docs.igrant.io/schema/data-disclosure-agreement/v1.0/#",
+        "schema": "https://schema.org/",
+        "mydata": "https://dictionary.mydata.org/prodserv/",
+        "dpv": "http://www.w3.org/ns/dpv#",
+        "sec": "https://w3id.org/security#",
+        "@id": {
+            "@type": "mydata:uid"
+        },
+        "@language": {
+            "@type": "dda:language"
+        },
+        "version": {
+            "@id": "dda:version",
+            "@type": "schema:version"
+        },
+        "templateId": {
+            "@id": "dda:templateId",
+            "@type": "mydata:uid"
+        },
+        "templateVersion": {
+            "@id": "dda:templateVersion",
+            "@type": "schema:version"
+        },
+        "dataController": {
+            "@id": "dda:dataController",
+            "@type": "@id",
+            "@context": {
+                "did": {
+                    "@id": "dda:dcDid",
+                    "@type": "@id"
+                },
+                "name": {
+                    "@id": "dda:dcName",
+                    "@type": "@id"
+                },
+                "legalId": {
+                    "@id": "dda:dcLegalId",
+                    "@type": "@id"
+                },
+                "url": {
+                    "@id": "dda:dcURL",
+                    "@type": "@id"
+                },
+                "industrySector": {
+                    "@id": "dda:dcIndustrySector",
+                    "@type": "@id"
+                }
+            }
+        },
+        "agreementPeriod": {
+            "@id": "dda:agreementPeriod",
+            "@type": "@id"
+        },
+        "dataSharingRestrictions": {
+            "@id": "dda:dataSharingRestrictions",
+            "@type": "@id",
+            "@context": {
+                "policyUrl": {
+                    "@id": "dda:dsrPolicyUrl",
+                    "@type": "@id"
+                },
+                "jurisdiction": {
+                    "@id": "dda:dsrJurisdiction",
+                    "@type": "@id"
+                },
+                "industrySector": {
+                    "@id": "dda:dsrIndustrySector",
+                    "@type": "@id"
+                },
+                "dataRetentionPeriod": {
+                    "@id": "dda:dsrDataRetentionPeriod",
+                    "@type": "@id"
+                },
+                "geographicRestriction": {
+                    "@id": "dda:dsrGeographicRestriction",
+                    "@type": "@id"
+                },
+                "storageLocation": {
+                    "@id": "dda:dsrStorageLocation",
+                    "@type": "@id"
+                }
+            }
+        },
+        "purpose": {
+            "@id": "dda:purpose",
+            "@type": "dpv:Purpose"
+        },
+        "purposeDescription": {
+            "@id": "dda:purposeDescription",
+            "@type": "@id"
+        },
+        "lawfulBasis": {
+            "@id": "dda:lawfulBasis",
+            "@type": "@id"
+        },
+        "personalData": {
+            "@id": "dda:personalData",
+            "@type": "@id",
+            "@container": "@list",
+            "@context": {
+                "attributeId": {
+                    "@id": "dda:pdAttributeId",
+                    "@type": "mydata:uid"
+                },
+                "attributeName": {
+                    "@id": "dda:pdAttributeName",
+                    "@type": "schema:Text"
+                },
+                "attributeSensitive": {
+                    "@id": "dda:pdAttributeSensitive",
+                    "@type": "schema:Boolean"
+                },
+                "attributeCategory": {
+                    "@id": "dda:pdAttributeCategory",
+                    "@type": "dpv:PersonalDataCategory"
+                }
+            }
+        },
+        "codeOfConduct": {
+            "@id": "dda:codeOfConduct",
+            "@type": "@id"
+        },
+        "dataUsingService": {
+            "@id": "dda:dataUsingService",
+            "@type": "@id",
+            "@context": {
+                "did": {
+                    "@id": "dda:dusDid",
+                    "@type": "@id"
+                },
+                "name": {
+                    "@id": "dda:dusName",
+                    "@type": "@id"
+                },
+                "legalId": {
+                    "@id": "dda:dusLegalId",
+                    "@type": "@id"
+                },
+                "url": {
+                    "@id": "dda:dusUrl",
+                    "@type": "@id"
+                },
+                "industrySector": {
+                    "@id": "dda:dusIndustrySector",
+                    "@type": "@id"
+                },
+                "usagePurposes": {
+                    "@id": "dda:dusUsagePurposes",
+                    "@type": "@id"
+                },
+                "jurisdiction": {
+                    "@id": "dda:dusJurisdiction",
+                    "@type": "@id"
+                },
+                "withdrawal": {
+                    "@id": "dda:dusWithdrawal",
+                    "@type": "@id"
+                },
+                "privacyRights": {
+                    "@id": "dda:dusPrivacyRights",
+                    "@type": "@id"
+                },
+                "signatureContact": {
+                    "@id": "dda:dusSignatureContact",
+                    "@type": "@id"
+                }
+            }
+        },
+        "event": {
+            "@id": "dda:event",
+            "@type": "@id",
+            "@container": "@list",
+            "@context": {
+                "id": {
+                    "@id": "dda:eventId",
+                    "@type": "mydata:uid"
+                },
+                "timeStamp": {
+                    "@id": "dda:eventTimestamp",
+                    "@type": "schema:DateTime"
+                },
+                "did": {
+                    "@id": "dda:eventDid",
+                    "@type": "@id"
+                },
+                "state": {
+                    "@id": "dda:eventState",
+                    "@type": "schema:Text"
+                }
+            }
+        },
+        "proofChain": {
+            "@id": "sec:proof",
+            "@type": "@id",
+            "@container": "@list"
+        }
+    }
+}
