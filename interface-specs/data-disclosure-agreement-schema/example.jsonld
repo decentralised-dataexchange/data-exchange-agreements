@@ -1,0 +1,69 @@
+{
+    "@context": [
+        "https://raw.githubusercontent.com/decentralised-dataexchange/data-exchange-agreements/main/interface-specs/data-disclosure-agreement-schema/data-disclosure-agreement-schema-context.jsonld",
+        "https://w3id.org/security/v2"
+    ],
+    "@id": "urn:uuid:xyz",
+    "language": "en",
+    "version": "0.0.1",
+    "templateId": "urn:uuid:abc",
+    "templateVersion": "0.0.1",
+    "dataController": {
+        "did": "did:abc",
+        "name": "alice",
+        "legalId": "lei:abc",
+        "url": "alice.com",
+        "industrySector": "retail"
+    },
+    "agreementPeriod": 365,
+    "dataSharingRestrictions": {
+        "policyUrl": "alice.com/policy.html",
+        "jurisdiction": "EU",
+        "industrySector": "Retail",
+        "dataRetentionPeriod": 365,
+        "geographicRestriction": "EU",
+        "storageLocation": "EU"
+    },
+    "purpose": "some purpose",
+    "purposeDescription": "description of the purpose",
+    "lawfulBasis": "consent",
+    "personalData": [
+        {
+            "attributeId": "abc123",
+            "attributeName": "abc",
+            "attributeSensitive": "true",
+            "attributeCategory": "personal_data"
+        }
+    ],
+    "codeOfConduct": "abc.com/code_of_conduct.html",
+    "dataUsingService": {
+        "did": "did:efg",
+        "name": "abc",
+        "legalId": "lei:abc",
+        "url": "abc.com",
+        "industrySector": "retail",
+        "usagePurposes": "abc",
+        "jurisdiction": "EU",
+        "withdrawal": "abc.com/withdrawal.html",
+        "privacyRights": "abc.com/privacy_rights.html",
+        "signatureContact": "alice"
+    },
+    "event": [
+        {
+            "id": "urn:uuid:event",
+            "timestamp": "1234",
+            "did": "did:abc:alice",
+            "state": "accept"
+        }
+    ],
+    "proofChain": [
+        {
+            "id": "urn:uuid:proof",
+            "type": "Assertion",
+            "created": "1234",
+            "verificationMethod": "Assertion",
+            "proofPurpose": "Assertion",
+            "proofValue": "x.y.z"
+        }
+    ]
+}
