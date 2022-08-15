@@ -8,7 +8,10 @@
         "@id": {
             "@type": "mydata:uid"
         },
-        "@language": "en",
+        "language": {
+            "@id": "mydata:language",
+            "@type": "@id"
+        },
         "version": {
             "@id": "dda:version",
             "@type": "schema:version"
