@@ -5,9 +5,6 @@
         "mydata": "https://dictionary.mydata.org/prodserv/",
         "dpv": "http://www.w3.org/ns/dpv#",
         "sec": "https://w3id.org/security#",
-        "@id": {
-            "@type": "mydata:uid"
-        },
         "language": {
             "@id": "mydata:language",
             "@type": "@id"
