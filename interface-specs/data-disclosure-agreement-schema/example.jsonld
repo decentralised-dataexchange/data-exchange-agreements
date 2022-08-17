@@ -4,6 +4,9 @@
         "https://w3id.org/security/v2"
     ],
     "@id": "urn:uuid:xyz",
+    "@type": [
+        "DataDisclosureAgreement"
+    ],
     "language": "en",
     "version": "0.0.1",
     "templateId": "urn:uuid:abc",
