@@ -24,6 +24,21 @@
             "markdown_paths": [
                 "datadisclosure-agreement-protocol-specification.md"
             ]
+        },
+        {
+            "title": "The did:mydata v2 method specification",
+            "spec_directory": "./docs/did",
+            "output_path": "./docs/www/did",
+            "logo": "../images/iGrant_1900_800_Black.png",
+            "logo_link": "https://dxa.igrant.io/",
+            "source": {
+                "host": "github",
+                "account": "decentralised-dataexchange",
+                "repo": "data-exchange-agreements"
+            },
+            "markdown_paths": [
+                "spec.md"
+            ]
         }
     ]
 }
