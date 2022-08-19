@@ -168,7 +168,7 @@ In the above document, controller property contains 2 did:key identifiers. These
 
 The controllers should match the `verificationMethod` specified in the `proofChain`.
 
-**The** **did:mydata identifier creation algorithm**
+#### The did:mydata identifier creation algorithm
 
 Following algorithm is used to create the did:mydata identifier, if an agreement document is available.
 
@@ -187,7 +187,7 @@ Following algorithm is used to create the did:mydata identifier, if an agreement
 > If the agreement type is Data Disclosure Agreement, then the resultant identifier will start with `zJ53`
 > 
 
-**Optional anchoring of did:mydata identifier on a DLT**
+#### Optional anchoring of did:mydata identifier on a DLT
 
 This will be further elaborated. 
 
