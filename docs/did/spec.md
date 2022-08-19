@@ -211,7 +211,7 @@ To be elaborated.
 
 To be elaborated.
 
-## 8.	Resources
+## Resources
 
 1. DID core specification: [https://www.w3.org/TR/did-core/](https://www.w3.org/TR/did-core/)
 2. IETF Multibase Data Format specification: [https://tools.ietf.org/html/draft-multiformats-multibase](https://tools.ietf.org/html/draft-multiformats-multibase) 
