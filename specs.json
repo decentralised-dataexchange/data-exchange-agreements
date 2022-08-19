@@ -5,7 +5,7 @@
             "spec_directory": "./docs",
             "output_path": "./docs/www",
             "logo": "images/iGrant_1900_800_Black.png",
-            "logo_link": "https://dxa.igrant.io/",
+            "logo_link": "https://dda.igrant.io/",
             "markdown_paths": [
                 "datadisclosure-agreement-specification.md"
             ]
@@ -15,7 +15,7 @@
             "spec_directory": "./docs/protocol",
             "output_path": "./docs/www/protocol",
             "logo": "../images/iGrant_1900_800_Black.png",
-            "logo_link": "https://dxa.igrant.io/",
+            "logo_link": "https://dda.igrant.io/",
             "source": {
                 "host": "github",
                 "account": "decentralised-dataexchange",
@@ -30,7 +30,7 @@
             "spec_directory": "./docs/did",
             "output_path": "./docs/www/did",
             "logo": "../images/iGrant_1900_800_Black.png",
-            "logo_link": "https://dxa.igrant.io/",
+            "logo_link": "https://dda.igrant.io/",
             "source": {
                 "host": "github",
                 "account": "decentralised-dataexchange",

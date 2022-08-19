@@ -32,7 +32,6 @@ jobs:
             || ! [[ -z "$(git status --porcelain)" ]] ; then
             git add .
             git commit -m "Update docs html"
-            git push origin main
           fi
 
       - name: Release changes
