@@ -258,18 +258,17 @@ DID registry will check the merkle root in the deactivation tree and make sure i
   },
   "body": {
     "diddoc": {},
-		"merkleRoot": "",
+    "merkleRoot": "",
     "merkleInclusionProof": [],
     "blink": "",
     "created": "",
     "updated": "",
     "deactivated": "",
     "nextUpdate": "",
-		"versionId": "",
-		"nextVersionId": ""
+    "versionId": "",
+    "nextVersionId": ""
   }
 }
-
 ```
 
 If a problem arises while handling the `read-did` message, DID registry service will respond with a problem report message. An example is given below:
@@ -319,18 +318,17 @@ DID registry service will respond to the above DIDComm message with an encryptio
   },
   "body": {
     "diddoc": {},
-		"merkleRoot": "",
+    "merkleRoot": "",
     "merkleInclusionProof": [],
-		"blink": "",
+    "blink": "",
     "created": "",
     "updated": "",
     "deactivated": "",
     "nextUpdate": "",
-		"versionId": "",
-		"nextVersionId": ""
+    "versionId": "",
+    "nextVersionId": ""
   }
 }
-
 ```
 
 If a problem arises while handling the `update-did` message, DID registry service will respond with a problem report message.
