@@ -4,6 +4,178 @@
         "@protected": true,
         "dexaRegistry": "https://docs.igrant.io/docs/data-exchange-agreements/#",
         "permissionVocab": "https://docs.igrant.io/schema/permission/v1.0/#",
+        "DataAgreement": {
+            "@id": "dexaRegistry:data-agreement",
+            "@type": "dexaRegistry:data-agreement",
+            "@context": {
+                "da": "https://docs.igrant.io/schema/data-agreements/v1#",
+                "schema": "https://schema.org/",
+                "mydata": "https://dictionary.mydata.org/prodserv/",
+                "dpv": "http://www.w3.org/ns/dpv#",
+                "mydataDidVocab": "https://docs.igrant.io/schema/mydata-did/v2.0/#",
+                "sec": "https://w3id.org/security#",
+                "@version": 1.1,
+                "@protected": true,
+                "id": {
+                    "@id": "da:id",
+                    "@type": "mydata:uid"
+                },
+                "version": {
+                    "@id": "da:version",
+                    "@type": "schema:version"
+                },
+                "templateId": {
+                    "@id": "da:templateId",
+                    "@type": "mydata:uid"
+                },
+                "templateVersion": {
+                    "@id": "da:templateVersion",
+                    "@type": "schema:version"
+                },
+                "dataControllerName": {
+                    "@id": "da:dataControllerName",
+                    "@type": "dpv:LegalEntity"
+                },
+                "dataControllerUrl": {
+                    "@id": "da:dataControllerUrl",
+                    "@type": "schema:URL"
+                },
+                "dataPolicy": {
+                    "@id": "da:dataPolicy",
+                    "@type": "@id",
+                    "@context": {
+                        "da": "https://docs.igrant.io/schema/data-agreements/v1#",
+                        "schema": "https://schema.org/",
+                        "dpv": "http://www.w3.org/ns/dpv#",
+                        "@version": 1.1,
+                        "@protected": true,
+                        "policyUrl": {
+                            "@id": "da:policyUrl",
+                            "@type": "schema:URL"
+                        },
+                        "jurisdiction": {
+                            "@id": "da:jurisdiction",
+                            "@type": "schema:jurisdiction"
+                        },
+                        "industrySector": {
+                            "@id": "da:industrySector",
+                            "@type": "schema:industry"
+                        },
+                        "dataRetentionPeriod": {
+                            "@id": "da:dataRetentionPeriod",
+                            "@type": "schema:Number"
+                        },
+                        "geographicRestriction": {
+                            "@id": "da:geographicRestriction",
+                            "@type": "schema:Continent"
+                        },
+                        "storageLocation": {
+                            "@id": "da:storageLocation",
+                            "@type": "dpv:StorageLocation"
+                        }
+                    }
+                },
+                "purpose": {
+                    "@id": "da:purpose",
+                    "@type": "dpv:Purpose"
+                },
+                "purposeDescription": {
+                    "@id": "da:purposeDescription",
+                    "@type": "schema:Text"
+                },
+                "lawfulBasis": {
+                    "@id": "da:lawfulBasis",
+                    "@type": "dpv:LegalBasis"
+                },
+                "methodOfUse": {
+                    "@id": "da:methodOfUse",
+                    "@type": "schema:Text"
+                },
+                "personalData": {
+                    "@id": "da:personalData",
+                    "@type": "@id",
+                    "@container": "@list",
+                    "@context": {
+                        "da": "https://docs.igrant.io/schema/data-agreements/v1#",
+                        "schema": "https://schema.org/",
+                        "dpv": "http://www.w3.org/ns/dpv#",
+                        "mydata": "https://dictionary.mydata.org/prodserv/",
+                        "@version": 1.1,
+                        "@protected": true,
+                        "attributeId": {
+                            "@id": "da:attributeId",
+                            "@type": "mydata:uid"
+                        },
+                        "attributeName": {
+                            "@id": "da:attributeName",
+                            "@type": "schema:Text"
+                        },
+                        "attributeSensitive": {
+                            "@id": "da:attributeSensitive",
+                            "@type": "schema:Boolean"
+                        },
+                        "attributeCategory": {
+                            "@id": "da:attributeCategory",
+                            "@type": "dpv:PersonalDataCategory"
+                        }
+                    }
+                },
+                "dpia": {
+                    "@id": "da:dpia",
+                    "@type": "@id",
+                    "@context": {
+                        "da": "https://docs.igrant.io/schema/data-agreements/v1#",
+                        "schema": "https://schema.org/",
+                        "@version": 1.1,
+                        "@protected": true,
+                        "dpiaDate": {
+                            "@id": "da:dpiaDate",
+                            "@type": "schema:DateTime"
+                        },
+                        "dpiaSummaryUrl": {
+                            "@id": "da:dpiaSummaryUrl",
+                            "@type": "schema:URL"
+                        }
+                    }
+                },
+                "event": {
+                    "@id": "da:event",
+                    "@type": "@id",
+                    "@container": "@list",
+                    "@context": {
+                        "da": "https://docs.igrant.io/schema/data-agreements/v1#",
+                        "schema": "https://schema.org/",
+                        "@version": 1.1,
+                        "@protected": true,
+                        "id": {
+                            "@id": "da:eventId",
+                            "@type": "mydata:uid"
+                        },
+                        "timeStamp": {
+                            "@id": "da:eventTimestamp",
+                            "@type": "schema:DateTime"
+                        },
+                        "did": {
+                            "@id": "da:eventDid",
+                            "@type": "mydataDidVocab:did"
+                        },
+                        "state": {
+                            "@id": "da:eventState",
+                            "@type": "schema:Text"
+                        }
+                    }
+                },
+                "dataSubjectDid": {
+                    "@id": "da:dataSubjectDid",
+                    "@type": "mydataDidVocab:did"
+                },
+                "proofChain": {
+                    "@id": "sec:proof",
+                    "@type": "@id",
+                    "@container": "@list"
+                }
+            }
+        },
         "DataDisclosureAgreement": {
             "@id": "dexaRegistry:data-disclosure-agreement",
             "@type": "dexaRegistry:data-disclosure-agreement",
