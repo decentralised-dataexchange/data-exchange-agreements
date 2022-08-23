@@ -70,6 +70,9 @@
                     "@container": "@list",
                     "@context": {
                         "dda": "https://docs.igrant.io/schema/data-disclosure-agreement/v1.0/#",
+                        "schema": "https://schema.org/",
+                        "mydata": "https://dictionary.mydata.org/prodserv/",
+                        "dpv": "http://www.w3.org/ns/dpv#",
                         "@version": 1.1,
                         "@protected": true,
                         "attributeId": {
