@@ -158,9 +158,13 @@
                     "@context": {
                         "dda": "https://docs.igrant.io/schema/data-disclosure-agreement/v1.0/#",
                         "permissionVocab": "https://docs.igrant.io/schema/permission/v2.0/#",
+                        "mydata": "https://dictionary.mydata.org/prodserv/",
                         "@version": 1.1,
                         "@protected": true,
-                        "attributeId": "dda:pdAttributeId",
+                        "attributeId": {
+                            "@id": "dda:pdAttributeId",
+                            "@type": "mydata:uid"
+                        },
                         "permission": "permissionVocab:permission"
                     }
                 },
