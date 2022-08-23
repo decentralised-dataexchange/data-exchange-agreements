@@ -1,6 +1,6 @@
 {
     "@context": [
-        "https://raw.githubusercontent.com/decentralised-dataexchange/data-exchange-agreements/main/interface-specs/jsonld/dexa-context.jsonld",
+        "https://raw.githubusercontent.com/decentralised-dataexchange/data-exchange-agreements/main/interface-specs/jsonld/contexts/dexa-context.jsonld",
         "https://w3id.org/security/v2"
     ],
     "@id": "urn:uuid:xyz",
