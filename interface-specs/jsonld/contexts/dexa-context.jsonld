@@ -135,33 +135,6 @@
                         }
                     }
                 },
-                "event": {
-                    "@id": "da:event",
-                    "@type": "@id",
-                    "@container": "@list",
-                    "@context": {
-                        "da": "https://docs.igrant.io/schema/data-agreements/v1#",
-                        "schema": "https://schema.org/",
-                        "@version": 1.1,
-                        "@protected": true,
-                        "id": {
-                            "@id": "da:eventId",
-                            "@type": "mydata:uid"
-                        },
-                        "timestamp": {
-                            "@id": "da:eventTimestamp",
-                            "@type": "schema:DateTime"
-                        },
-                        "did": {
-                            "@id": "da:eventDid",
-                            "@type": "mydataDidVocab:did"
-                        },
-                        "state": {
-                            "@id": "da:eventState",
-                            "@type": "schema:Text"
-                        }
-                    }
-                },
                 "dataSubjectDid": {
                     "@id": "da:dataSubjectDid",
                     "@type": "mydataDidVocab:did"
@@ -280,34 +253,6 @@
                         "withdrawal": "dda:dusWithdrawal",
                         "privacyRights": "dda:dusPrivacyRights",
                         "signatureContact": "dda:dusSignatureContact"
-                    }
-                },
-                "event": {
-                    "@id": "dda:event",
-                    "@type": "dda:event",
-                    "@container": "@list",
-                    "@context": {
-                        "dda": "https://docs.igrant.io/schema/data-disclosure-agreement/v1.0/#",
-                        "schema": "https://schema.org/",
-                        "mydata": "https://dictionary.mydata.org/prodserv/",
-                        "@version": 1.1,
-                        "@protected": true,
-                        "id": {
-                            "@id": "dda:eventId",
-                            "@type": "mydata:uid"
-                        },
-                        "timeStamp": {
-                            "@id": "dda:eventTimestamp",
-                            "@type": "schema:DateTime"
-                        },
-                        "did": {
-                            "@id": "dda:eventDid",
-                            "@type": "@id"
-                        },
-                        "state": {
-                            "@id": "dda:eventState",
-                            "@type": "schema:Text"
-                        }
                     }
                 },
                 "proofChain": {

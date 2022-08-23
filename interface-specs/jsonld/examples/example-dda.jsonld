@@ -51,14 +51,6 @@
         "privacyRights": "abc.com/privacy_rights.html",
         "signatureContact": "alice"
     },
-    "event": [
-        {
-            "id": "urn:uuid:event",
-            "timestamp": "1234",
-            "did": "did:abc:alice",
-            "state": "accept"
-        }
-    ],
     "proofChain": [
         {
             "id": "urn:uuid:proof",

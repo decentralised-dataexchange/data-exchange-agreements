@@ -37,14 +37,6 @@
         "dpiaDate": "2021-05-08T08:41:59+0000",
         "dpiaSummaryUrl": "https://org.com/dpia_results.html"
     },
-    "event": [
-        {
-            "id": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
-            "timestamp": "2021-05-08T08:41:59+0000",
-            "did": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
-            "state": "offer"
-        }
-    ],
     "proofChain": [
         {
             "id": "did:key:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
