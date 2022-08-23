@@ -1,6 +1,6 @@
 {
     "@context": [
-        "https://raw.githubusercontent.com/decentralised-dataexchange/data-exchange-agreements/main/interface-specs/data-disclosure-agreement-schema/data-disclosure-agreement-schema-context.jsonld",
+        "https://raw.githubusercontent.com/decentralised-dataexchange/data-exchange-agreements/main/interface-specs/jsonld/dexa-context.jsonld",
         "https://w3id.org/security/v2"
     ],
     "@id": "urn:uuid:xyz",
@@ -62,10 +62,10 @@
     "proofChain": [
         {
             "id": "urn:uuid:proof",
-            "type": "Assertion",
-            "created": "1234",
-            "verificationMethod": "Assertion",
-            "proofPurpose": "Assertion",
+            "type": "Ed25519Signature2018",
+            "created": "2017-06-18T21:19:10Z",
+            "verificationMethod": "did:key:abc",
+            "proofPurpose": "authentication",
             "proofValue": "x.y.z"
         }
     ]

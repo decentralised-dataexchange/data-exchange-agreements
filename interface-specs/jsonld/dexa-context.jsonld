@@ -2,10 +2,11 @@
     "@context": {
         "@version": 1.1,
         "@protected": true,
-        "ddaRegistry": "https://docs.igrant.io/docs/data-exchange-agreements/#",
+        "dexaRegistry": "https://docs.igrant.io/docs/data-exchange-agreements/#",
+        "permissionVocab": "https://docs.igrant.io/schema/permission/v1.0/#",
         "DataDisclosureAgreement": {
-            "@id": "ddaRegistry:data-disclosure-agreement",
-            "@type": "ddaRegistry:data-disclosure-agreement",
+            "@id": "dexaRegistry:data-disclosure-agreement",
+            "@type": "dexaRegistry:data-disclosure-agreement",
             "@context": {
                 "dda": "https://docs.igrant.io/schema/data-disclosure-agreement/v1.0/#",
                 "schema": "https://schema.org/",
@@ -135,6 +136,35 @@
                         }
                     }
                 },
+                "proofChain": {
+                    "@id": "sec:proof",
+                    "@type": "@id",
+                    "@container": "@list"
+                }
+            }
+        },
+        "Permission": {
+            "@id": "dexaRegistry:permission",
+            "@type": "dexaRegistry:permission",
+            "@context": {
+                "permissionVocab": "https://docs.igrant.io/schema/permission/v1.0/#",
+                "mydataDidVocab": "https://docs.igrant.io/schema/mydata-did/v2.0/#",
+                "@version": 1.1,
+                "@protected": true,
+                "personalDataAttributes": {
+                    "@id": "permissionVocab:personalDataAttributes",
+                    "@type": "@id",
+                    "@container": "@list",
+                    "@context": {
+                        "dda": "https://docs.igrant.io/schema/data-disclosure-agreement/v1.0/#",
+                        "permissionVocab": "https://docs.igrant.io/schema/permission/v2.0/#",
+                        "@version": 1.1,
+                        "@protected": true,
+                        "attributeId": "dda:pdAttributeId",
+                        "permission": "permissionVocab:permission"
+                    }
+                },
+                "dataAgreementDid": "mydataDidVocab:dataAgreementDid",
                 "proofChain": {
                     "@id": "sec:proof",
                     "@type": "@id",
