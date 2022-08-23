@@ -1,0 +1,59 @@
+{
+    "@context": [
+        "https://raw.githubusercontent.com/decentralised-dataexchange/data-exchange-agreements/main/interface-specs/jsonld/contexts/dexa-context.jsonld",
+        "https://w3id.org/security/v2"
+    ],
+    "@id": "urn:uuid:xyz",
+    "@type": [
+        "DataAgreement"
+    ],
+    "language": "en",
+    "version": "0.0.1",
+    "templateId": "urn:uuid:abc",
+    "templateVersion": "0.0.1",
+    "dataControllerName": "Happy Shopping AB",
+    "dataControllerUrl": "https://www.happyshopping.com",
+    "dataPolicy": {
+        "policyUrl": "https://happyshoping.com/privacy-policy/",
+        "jurisdiction": "Sweden",
+        "industrySector": "Retail",
+        "dataRetentionPeriod": 30,
+        "geographicRestriction": "Europe",
+        "storageLocation": "Europe"
+    },
+    "purpose": "Customized shopping experience",
+    "purposeDescription": "Collecting user data for offering custom tailored shopping experience",
+    "lawfulBasis": "consent",
+    "methodOfUse": "data-using-service",
+    "personalData": [
+        {
+            "attributeId": "f216cb1-aedb-571e-46f7-2fef51dedb54",
+            "attributeName": "Name",
+            "attributeSensitive": true,
+            "attributeCategory": "Name"
+        }
+    ],
+    "dpia": {
+        "dpiaDate": "2021-05-08T08:41:59+0000",
+        "dpiaSummaryUrl": "https://org.com/dpia_results.html"
+    },
+    "event": [
+        {
+            "id": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
+            "timestamp": "2021-05-08T08:41:59+0000",
+            "did": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
+            "state": "offer"
+        }
+    ],
+    "proofChain": [
+        {
+            "id": "did:key:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
+            "type": "Ed25519Signature2020",
+            "created": "2021-05-08T08:41:59+0000",
+            "verificationMethod": "did:key:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
+            "proofPurpose": "contractAgreement",
+            "proofValue": "z6MkwW6aqMnjgrhJXFUko3NnZPGzVpkNzhYK7yEhnsibmLwLz6MkwW6aqMnjgrhJXFUko3NnZPGzVpkNzhYK7yEhnsibmLwL"
+        }
+    ],
+    "dataSubjectDid": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
+}

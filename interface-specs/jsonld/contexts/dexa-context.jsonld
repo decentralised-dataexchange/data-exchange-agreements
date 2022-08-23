@@ -16,10 +16,7 @@
                 "sec": "https://w3id.org/security#",
                 "@version": 1.1,
                 "@protected": true,
-                "id": {
-                    "@id": "da:id",
-                    "@type": "mydata:uid"
-                },
+                "language": "mydata:language",
                 "version": {
                     "@id": "da:version",
                     "@type": "schema:version"
@@ -151,7 +148,7 @@
                             "@id": "da:eventId",
                             "@type": "mydata:uid"
                         },
-                        "timeStamp": {
+                        "timestamp": {
                             "@id": "da:eventTimestamp",
                             "@type": "schema:DateTime"
                         },
