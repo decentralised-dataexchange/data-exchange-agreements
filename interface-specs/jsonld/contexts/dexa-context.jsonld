@@ -69,6 +69,10 @@
                         "storageLocation": {
                             "@id": "da:storageLocation",
                             "@type": "dpv:StorageLocation"
+                        },
+                        "thirdPartyDataSharing": {
+                            "@id": "da:thirdPartyDataSharing",
+                            "@type": "schema:Boolean"
                         }
                     }
                 },
@@ -114,6 +118,29 @@
                         "attributeCategory": {
                             "@id": "da:attributeCategory",
                             "@type": "dpv:PersonalDataCategory"
+                        },
+                        "attributeDescription": {
+                            "@id": "da:attributeDescription",
+                            "@type": "da:attributeDescription"
+                        },
+                        "restrictions": {
+                            "@id": "da:attributeRestrictions",
+                            "@type": "@id",
+                            "@container": "@list",
+                            "@context": {
+                                "da": "https://docs.igrant.io/schema/data-agreements/v1#",
+                                "schema": "https://schema.org/",
+                                "@version": 1.1,
+                                "@protected": true,
+                                "schemaId": {
+                                    "@id": "da:schemaId",
+                                    "@type": "schema:Text"
+                                },
+                                "credentialDefinitionId": {
+                                    "@id": "da:credentialDefinitionId",
+                                    "@type": "schema:Text"
+                                }
+                            }
                         }
                     }
                 },

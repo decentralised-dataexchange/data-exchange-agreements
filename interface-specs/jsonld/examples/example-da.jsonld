@@ -19,7 +19,8 @@
         "industrySector": "Retail",
         "dataRetentionPeriod": 30,
         "geographicRestriction": "Europe",
-        "storageLocation": "Europe"
+        "storageLocation": "Europe",
+        "thirdPartyDataSharing": false
     },
     "purpose": "Customized shopping experience",
     "purposeDescription": "Collecting user data for offering custom tailored shopping experience",
@@ -30,7 +31,8 @@
             "attributeId": "f216cb1-aedb-571e-46f7-2fef51dedb54",
             "attributeName": "Name",
             "attributeSensitive": true,
-            "attributeCategory": "Name"
+            "attributeCategory": "Name",
+            "attributeDescription": "Name of the individual"
         }
     ],
     "dpia": {
