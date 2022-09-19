@@ -314,7 +314,7 @@
                         "permission": "permissionVocab:permission"
                     }
                 },
-                "dataAgreementDid": "mydataDidVocab:dataAgreementDid",
+                "dataAgreementId": "mydataDidVocab:dataAgreementId",
                 "proofChain": {
                     "@id": "sec:proof",
                     "@type": "@id",
